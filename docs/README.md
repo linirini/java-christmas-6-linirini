@@ -53,7 +53,7 @@
 ### `고객` 방문 날짜, 메뉴 미리 선택
 - [ ] 방문 날짜 입력 - InputView#inputVisitingDate
   - [ ] "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)"
-    - 1~31 사이 숫자만 입력 - DecemberCalender#isValidDate
+    - [ ] 1~31 사이 숫자만 입력 - DecemberCalender#isValidDate
     - [ ] 숫자가 아닌 경우 & 범위 내 숫자가 아닌 경우 :  "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요."
 - [ ] 주문 메뉴와 개수 입력 - InputView#inputOrder
   - [ ] "주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)"
