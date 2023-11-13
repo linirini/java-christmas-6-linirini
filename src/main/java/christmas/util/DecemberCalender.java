@@ -6,6 +6,7 @@ public enum DecemberCalender {
 
     DECEMBER(31,DayOfWeek.FRIDAY, new int[]{3,10,17,24,25,31});
 
+    private static final int CHRISTMAS = 25;
     private final int days;
     private final DayOfWeek startingDayOfWeek;
     private final int[] starDates;
