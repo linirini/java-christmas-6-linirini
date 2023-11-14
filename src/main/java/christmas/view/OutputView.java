@@ -42,24 +42,32 @@ public class OutputView {
     }
 
     private void printChristmasDdayDiscountBenefit(int amount) {
-        System.out.println(
-                CHRISTMAS_D_DAY_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                        + MONEY_UNIT.getMessage());
+        if(amount!=0) {
+            System.out.println(
+                    CHRISTMAS_D_DAY_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
+                            + MONEY_UNIT.getMessage());
+        }
     }
 
     private void printWeekDiscountBenefit(int amount) {
-        System.out.println(WEEK_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                + MONEY_UNIT.getMessage());
+        if(amount!=0) {
+            System.out.println(WEEK_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
+                    + MONEY_UNIT.getMessage());
+        }
     }
 
     private void printWeekendDiscountBenefit(int amount) {
-        System.out.println(WEEKEND_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                + MONEY_UNIT.getMessage());
+        if(amount!=0) {
+            System.out.println(WEEKEND_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
+                    + MONEY_UNIT.getMessage());
+        }
     }
 
     private void printGiftBenefit(int amount) {
-        System.out.println(GIFT_BENEFIT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                + MONEY_UNIT.getMessage());
+        if(amount!=0) {
+            System.out.println(GIFT_BENEFIT_OUTPUT.getMessage() + String.format("-%,d", amount)
+                    + MONEY_UNIT.getMessage());
+        }
     }
 
 }

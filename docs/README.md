@@ -83,7 +83,7 @@
     - [x] 요일 할인은 "평일 할인: ", "주말 할인:" 형식으로 출력 - OutputView#printWeekDiscountBenefit
     - [x] 특별 할인은 "특별 할인: " 형식으로 출력 - OutputView#printWeekendDiscountBenefit
     - [x] 증정 이벤트는 "증정 이벤트: " 형식으로 출력 - OutputView#printGiftBenefit
-  - [ ] 고객에게 적용된 이벤트 내역만 출력
+  - [x] 고객에게 적용된 이벤트 내역만 출력
   - [ ] 총주문 금액 10000원 이상부터 이벤트 적용
     - [ ] 혜택 내역 없을 경우 "없음" 출력
 - [ ] 총 혜택 금액 출력 - OutputView#printBenefitPrice
