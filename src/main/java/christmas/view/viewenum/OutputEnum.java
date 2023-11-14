@@ -10,9 +10,10 @@ public enum OutputEnum {
     MONEY_UNIT("원"),
     NONE("없음"),
     GIFT_MENU_OUTPUT("<증정 메뉴>"),
-    CHRISTMAS_D_DAY_DISCOUNT_OUTPUT("크리스마스 디데이 할인:"),
+    CHRISTMAS_D_DAY_DISCOUNT_OUTPUT("크리스마스 디데이 할인: "),
     WEEK_DISCOUNT_OUTPUT("평일 할인: "),
-    WEEKEND_DISCOUNT_OUTPUT("주말 할인: ");
+    WEEKEND_DISCOUNT_OUTPUT("주말 할인: "),
+    GIFT_BENEFIT_OUTPUT("증정 이벤트: ");
 
     private final String message;
 
