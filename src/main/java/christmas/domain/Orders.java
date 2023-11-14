@@ -1,6 +1,8 @@
 package christmas.domain;
 
 import static christmas.domain.menu.MenuType.BEVERAGE;
+import static christmas.domain.menu.MenuType.DESSERT;
+import static christmas.domain.menu.MenuType.MAIN_DISH;
 import static christmas.util.ExceptionEnum.MAXIMUM_ORDER_COUNT_EXCEEDED;
 import static christmas.util.ExceptionEnum.ORDERS_ONLY_BEVERAGE;
 
@@ -57,6 +59,14 @@ public class Orders {
             amount += entry.getKey().getPrice() * entry.getValue();
         }
         return amount;
+    }
+
+    public int getMainDishCount() {
+        return (int)orders.keySet().stream().filter(key->MenuType.findMenuType(key.getViewName())==MAIN_DISH).count();
+    }
+
+    public int getDessertCount() {
+        return (int)orders.keySet().stream().filter(key->MenuType.findMenuType(key.getViewName())==DESSERT).count();
     }
 
 }
