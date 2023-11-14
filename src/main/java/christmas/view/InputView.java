@@ -2,6 +2,7 @@ package christmas.view;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 import static christmas.util.ExceptionEnum.INVALID_DATE;
+import static christmas.util.ExceptionEnum.INVALID_ORDERS;
 import static christmas.view.viewenum.InputEnum.ORDERS_INPUT;
 import static christmas.view.viewenum.InputEnum.VISITING_DATE_INPUT;
 
@@ -58,7 +59,7 @@ public class InputView {
 
     private void throwIfInvalidForm(String[] menuAndCount) {
         if(menuAndCount.length!=2){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
 
