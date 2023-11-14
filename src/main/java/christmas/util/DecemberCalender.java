@@ -21,4 +21,6 @@ public enum DecemberCalender {
         return date>0&&date<=DECEMBER.days;
     }
 
+    public static boolean isAfterChristmas(int date){return date>CHRISTMAS;}
+
 }

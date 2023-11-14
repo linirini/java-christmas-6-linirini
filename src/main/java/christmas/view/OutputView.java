@@ -7,7 +7,6 @@ import static christmas.view.viewenum.OutputEnum.NONE;
 import static christmas.view.viewenum.OutputEnum.ORDER_AMOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.ORDER_MENU_OUTPUT;
 
-import christmas.domain.menu.MenuOption;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -23,7 +22,7 @@ public class OutputView {
         System.out.println(String.format("%,d", amount) + MONEY_UNIT.getMessage());
     }
 
-    public void printGiftMenu(HashMap<String,Integer> gift) {
+    public void printGiftMenu(HashMap<String, Integer> gift) {
         System.out.println(GIFT_MENU_OUTPUT.getMessage());
         if (gift.isEmpty()) {
             System.out.println(NONE.getMessage());
@@ -32,7 +31,7 @@ public class OutputView {
         printMenus(gift);
     }
 
-    private void printMenus(HashMap<String,Integer> menus){
+    private void printMenus(HashMap<String, Integer> menus) {
         for (Entry<String, Integer> entry : menus.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue() + COUNT_UNIT.getMessage());
         }
