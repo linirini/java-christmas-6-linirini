@@ -52,6 +52,7 @@ public class InputView {
             String menu = menuAndCount[0];
             int count = convertCountToInteger(menuAndCount[1]);
             throwIfInvalidCount(count);
+            throwIfAlreadyOrderedMenu(menusAndCount,menu);
             menusAndCount.put(menu, count);
             totalCount += count;
         }
@@ -77,5 +78,12 @@ public class InputView {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
+
+    private void throwIfAlreadyOrderedMenu(HashMap<String, Integer> menusAndCount, String menu) {
+        if(menusAndCount.containsKey(menu)){
+            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
+        }
+    }
+
 
 }
