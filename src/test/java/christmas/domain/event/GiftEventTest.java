@@ -20,14 +20,14 @@ public class GiftEventTest {
     @Test
     void 증정품_자격_여부_O() {
         int amount = 123000;
-        assertThat(giftEvent.getGift(amount)).hasSize(1).contains(entry("샴페인", 1));
+        assertThat(giftEvent.receiveGift(amount)).hasSize(1).contains(entry("샴페인", 1));
     }
 
     @DisplayName("할인 전 총주문 금액이 12만원 이하일 경우 증정품을 받을 수 없다.")
     @Test
     void 증정품_자격_여부_X() {
         int amount = 12300;
-        assertThat(giftEvent.getGift(amount)).isEmpty();
+        assertThat(giftEvent.receiveGift(amount)).isEmpty();
     }
 
 }
