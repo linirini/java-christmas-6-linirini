@@ -47,12 +47,19 @@ public class InputView {
         int totalCount = 0;
         for (String menuWithCount : menusWithCount) {
             String[] menuAndCount = menuWithCount.split("-");
+            throwIfInvalidForm(menuAndCount);
             String menu = menuAndCount[0];
             int count = convertCountToInteger(menuAndCount[1]);
             menusAndCount.put(menu, count);
             totalCount += count;
         }
         return menusAndCount;
+    }
+
+    private void throwIfInvalidForm(String[] menuAndCount) {
+        if(menuAndCount.length!=2){
+            throw new IllegalArgumentException();
+        }
     }
 
     private int convertCountToInteger(String count) {
