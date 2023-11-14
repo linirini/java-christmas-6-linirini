@@ -1,6 +1,7 @@
 package christmas.view;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
+import static christmas.util.DecemberCalender.isValidDate;
 import static christmas.util.ExceptionEnum.INVALID_DATE;
 import static christmas.util.ExceptionEnum.INVALID_ORDERS;
 import static christmas.view.viewenum.InputEnum.ORDERS_INPUT;
@@ -26,7 +27,7 @@ public class InputView {
     }
 
     private void throwIfInvalidDate(int date) {
-        if (!DecemberCalender.isValidDate(date)) {
+        if (!isValidDate(date)) {
             throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
     }
