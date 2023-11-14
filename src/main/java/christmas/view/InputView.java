@@ -75,7 +75,11 @@ public class InputView {
     }
 
     private MenuOption convertMenuToMenuOption(String menu) {
-        return null;
+        try{
+            return MenuOption.findMenuOption(menu);
+        }catch (RuntimeException RE){
+            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
+        }
     }
 
     private int convertCountToInteger(String count) {
