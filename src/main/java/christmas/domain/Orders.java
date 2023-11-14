@@ -2,6 +2,7 @@ package christmas.domain;
 
 import static christmas.domain.menu.MenuType.BEVERAGE;
 import static christmas.util.ExceptionEnum.MAXIMUM_ORDER_COUNT_EXCEEDED;
+import static christmas.util.ExceptionEnum.ORDERS_ONLY_BEVERAGE;
 
 import christmas.domain.menu.MenuOption;
 import christmas.domain.menu.MenuType;
@@ -38,7 +39,7 @@ public class Orders {
                 return;
             }
         }
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException(ORDERS_ONLY_BEVERAGE.getMessage());
     }
 
 }
