@@ -1,5 +1,6 @@
 package christmas.view;
 
+import static christmas.view.viewenum.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.COUNT_UNIT;
 import static christmas.view.viewenum.OutputEnum.GIFT_MENU_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.MONEY_UNIT;
@@ -39,16 +40,20 @@ public class OutputView {
         }
     }
 
+    private void printChristmasDdayDiscount(int amount) {
+        System.out.println(
+                CHRISTMAS_D_DAY_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
+                        + MONEY_UNIT.getMessage());
+    }
+
     private void printWeekDiscount(int amount) {
         System.out.println(WEEK_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
                 + MONEY_UNIT.getMessage());
-
     }
 
     private void printWeekendDiscount(int amount) {
         System.out.println(WEEKEND_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
                 + MONEY_UNIT.getMessage());
-
     }
 
 }
