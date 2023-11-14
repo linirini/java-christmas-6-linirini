@@ -7,6 +7,7 @@ import static christmas.util.ExceptionEnum.ORDERS_ONLY_BEVERAGE;
 import christmas.domain.menu.MenuOption;
 import christmas.domain.menu.MenuType;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class Orders {
 
@@ -40,6 +41,14 @@ public class Orders {
             }
         }
         throw new IllegalArgumentException(ORDERS_ONLY_BEVERAGE.getMessage());
+    }
+
+    public HashMap<String, Integer> getOrderedMenusAndCount(){
+        HashMap<String, Integer>orderedMenusAndCount = new HashMap<>();
+        for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
+            orderedMenusAndCount.put(entry.getKey().getViewName(),entry.getValue());
+        }
+        return orderedMenusAndCount;
     }
 
 }
