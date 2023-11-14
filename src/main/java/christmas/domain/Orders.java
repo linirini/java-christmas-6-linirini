@@ -3,6 +3,7 @@ package christmas.domain;
 import static christmas.domain.menu.MenuType.BEVERAGE;
 import static christmas.domain.menu.MenuType.DESSERT;
 import static christmas.domain.menu.MenuType.MAIN_DISH;
+import static christmas.domain.menu.MenuType.findMenuType;
 import static christmas.util.ExceptionEnum.MAXIMUM_ORDER_COUNT_EXCEEDED;
 import static christmas.util.ExceptionEnum.ORDERS_ONLY_BEVERAGE;
 
@@ -62,11 +63,23 @@ public class Orders {
     }
 
     public int getMainDishCount() {
-        return (int)orders.keySet().stream().filter(key->MenuType.findMenuType(key.getViewName())==MAIN_DISH).count();
+        int count = 0;
+        for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
+            if(findMenuType(entry.getKey().getViewName())==MAIN_DISH){
+                count+=entry.getValue();
+            }
+        }
+        return count;
     }
 
     public int getDessertCount() {
-        return (int)orders.keySet().stream().filter(key->MenuType.findMenuType(key.getViewName())==DESSERT).count();
+        int count = 0;
+        for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
+            if(findMenuType(entry.getKey().getViewName())==DESSERT){
+                count+=entry.getValue();
+            }
+        }
+        return count;
     }
 
 }
