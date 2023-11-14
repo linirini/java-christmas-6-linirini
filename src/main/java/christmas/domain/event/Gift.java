@@ -3,7 +3,7 @@ package christmas.domain.event;
 import christmas.domain.menu.MenuOption;
 import java.util.HashMap;
 
-public class GiftEvent {
+public class Gift {
 
     private final static MenuOption GIFT = MenuOption.CHAMPAGNE;
     private final static int COUNT = 1;
