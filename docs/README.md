@@ -24,21 +24,21 @@
 - 이벤트 목록 Enum 관리
 - 이벤트 기간 : (크리스마스 디데이 할인 외) 2023.12.1 ~ 2023.12.31
 - [ ] 크리스마스 디데이 할인 적용 - Event#christmasDdayDiscount
-  - [ ] 이벤트 기간인지 확인한다.: 2023.12.1 ~ 2023.12.25 - DecemberCalender#isAfterChristmas
-  - [ ] 1,000원으로 시작하여 크리스마스가 다가올수록 날마다 할인 금액이 100원씩 증가 - ChristmasDdayDiscount#discount
+  - [x] 이벤트 기간인지 확인한다.: 2023.12.1 ~ 2023.12.25 - DecemberCalender#isAfterChristmas
+  - [x] 1,000원으로 시작하여 크리스마스가 다가올수록 날마다 할인 금액이 100원씩 증가 - ChristmasDdayDiscount#discount
     - 최종 25일엔 3400원 할인
   - [ ] 총 주문 금액에서 해당 금액만큼 할인 - Event#christmasDdayDiscount
 - [ ] 요일 할인 적용 - Event#dayOfWeekDiscount
   - [ ] 주말인지 확인한다. - DecemberCalender#isWeekend
   - [ ] 평일 할인(일~목) : 디저트 메뉴 1개당 2023원 할인 - DayOfWeekDiscount#discount
-    - 디저트 메뉴 개수를 구한다. - Order#getDessertCount
+    - [ ] 디저트 메뉴 개수를 구한다. - Orders#getDessertCount
   - [ ] 주말 할인(금~토) : 메인 메뉴 1개당 2023원 할인 - DayOfWeekDiscount#discount
-    - 메인 매뉴 개수를 구한다. - Order#getMainDishCount
+    - [ ] 메인 매뉴 개수를 구한다. - Orders#getMainDishCount
 - [ ] 특별 할인 적용 - Event#specialDiscount
   - [ ] 이벤트 달력에 별이 있으면 총주문 금액에서 1000원 할인 - SpecialDiscount#discount
   - [ ] 특별 할인 날짜인지 확인한다. : 매주 일요일(3,10,17,24,31), 크리스마스(25) - DecemberCalender#hasStar
 - [ ] 증정 이벤트 적용 - Event#getGift
-  - [x] 할인 전 총주문 금액 >= 12만원이다. - Order#getTotalOrderPrice
+  - [x] 할인 전 총주문 금액 >= 12만원이다. - Orders#getTotalOrderPrice
   - [x] 샴페인 1개(25,000원) 증정 - GiftEvent#receiveGift
 ## 이벤트 배지
 - [ ] 이벤트 배지 부여 - Event#getEventBadge
