@@ -15,9 +15,7 @@ public class OutputView {
 
     public void printOrderedMenus(HashMap<String, Integer> menus) {
         System.out.println(ORDER_MENU_OUTPUT.getMessage());
-        for (Entry<String, Integer> entry : menus.entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue() + COUNT_UNIT.getMessage());
-        }
+        printMenus(menus);
     }
 
     public void printOrdersAmount(int amount) {
@@ -25,13 +23,17 @@ public class OutputView {
         System.out.println(String.format("%,d", amount) + MONEY_UNIT.getMessage());
     }
 
-    public void printGiftMenu(HashMap<MenuOption,Integer> gift) {
+    public void printGiftMenu(HashMap<String,Integer> gift) {
         System.out.println(GIFT_MENU_OUTPUT.getMessage());
         if (gift.isEmpty()) {
             System.out.println(NONE.getMessage());
             return;
         }
-        for (Entry<MenuOption, Integer> entry : gift.entrySet()) {
+        printMenus(gift);
+    }
+
+    private void printMenus(HashMap<String,Integer> menus){
+        for (Entry<String, Integer> entry : menus.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue() + COUNT_UNIT.getMessage());
         }
     }
