@@ -1,5 +1,6 @@
 package christmas.util;
 
+import static christmas.util.DecemberCalender.hasStar;
 import static christmas.util.DecemberCalender.isAfterChristmas;
 import static christmas.util.DecemberCalender.isValidDate;
 import static christmas.util.DecemberCalender.isWeekend;
@@ -51,6 +52,20 @@ class DecemberCalenderTest {
     @ValueSource(ints = {1, 22})
     void 주말(int date) {
         assertThat(isWeekend(date)).isTrue();
+    }
+
+    @DisplayName("별표 된 날짜이다.")
+    @ParameterizedTest
+    @ValueSource(ints = {3, 25})
+    void 별표_날짜(int date) {
+        assertThat(hasStar(date)).isTrue();
+    }
+
+    @DisplayName("별표 없는 날짜이다.")
+    @ParameterizedTest
+    @ValueSource(ints = {2, 26})
+    void 별표_없는_날짜(int date) {
+        assertThat(hasStar(date)).isFalse();
     }
 
 }
