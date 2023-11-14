@@ -1,6 +1,7 @@
 package christmas.domain;
 
 import static christmas.util.ExceptionEnum.INVALID_ORDERS;
+import static christmas.util.ExceptionEnum.MAXIMUM_ORDER_COUNT_EXCEEDED;
 
 import christmas.domain.menu.MenuOption;
 import java.util.HashMap;
@@ -25,7 +26,7 @@ public class Orders {
             totalCount+=count;
         }
         if(totalCount>20){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(MAXIMUM_ORDER_COUNT_EXCEEDED.getMessage());
         }
     }
 
