@@ -10,7 +10,6 @@ import christmas.domain.Orders;
 import christmas.domain.menu.MenuOption;
 import christmas.util.DecemberCalender;
 import java.util.HashMap;
-import java.util.regex.PatternSyntaxException;
 
 public class InputView {
 
@@ -59,11 +58,11 @@ public class InputView {
     }
 
     private String[] parseToMenuAndCount(String menuWithCount) {
-        try{
+        try {
             String[] menuAndCount = menuWithCount.split("-");
             throwIfInvalidForm(menuAndCount);
             return menuAndCount;
-        }catch (Exception E){
+        } catch (Exception E) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
@@ -75,9 +74,9 @@ public class InputView {
     }
 
     private MenuOption convertMenuToMenuOption(String menu) {
-        try{
+        try {
             return MenuOption.findMenuOption(menu);
-        }catch (RuntimeException RE){
+        } catch (RuntimeException RE) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
@@ -96,7 +95,8 @@ public class InputView {
         }
     }
 
-    private void throwIfAlreadyOrderedMenu(HashMap<MenuOption, Integer> menusAndCount, MenuOption menuOption) {
+    private void throwIfAlreadyOrderedMenu(HashMap<MenuOption, Integer> menusAndCount,
+            MenuOption menuOption) {
         if (menusAndCount.containsKey(menuOption)) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
