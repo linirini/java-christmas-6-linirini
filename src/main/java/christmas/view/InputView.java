@@ -45,7 +45,6 @@ public class InputView {
 
     private HashMap<String, Integer> parseToMenuAndCount(String[] menusWithCount) {
         HashMap<String, Integer> menusAndCount = new HashMap<>();
-        int totalCount = 0;
         for (String menuWithCount : menusWithCount) {
             String[] menuAndCount = menuWithCount.split("-");
             throwIfInvalidForm(menuAndCount);
@@ -54,9 +53,7 @@ public class InputView {
             throwIfInvalidCount(count);
             throwIfAlreadyOrderedMenu(menusAndCount, menu);
             menusAndCount.put(menu, count);
-            totalCount += count;
         }
-        throwIfInvalidTotalCount(totalCount);
         return menusAndCount;
     }
 
@@ -82,12 +79,6 @@ public class InputView {
 
     private void throwIfAlreadyOrderedMenu(HashMap<String, Integer> menusAndCount, String menu) {
         if (menusAndCount.containsKey(menu)) {
-            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
-        }
-    }
-
-    private void throwIfInvalidTotalCount(int totalCount) {
-        if (totalCount > 20) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
