@@ -2,6 +2,7 @@ package christmas.domain;
 
 import static christmas.domain.menu.MenuOption.CHAMPAGNE;
 import static christmas.domain.menu.MenuOption.MUSHROOM_SOUP;
+import static christmas.domain.menu.MenuOption.RED_WINE;
 import static christmas.domain.menu.MenuOption.TAPAS;
 import static christmas.domain.menu.MenuOption.ZERO_COKE;
 import static java.util.Map.entry;
@@ -52,6 +53,14 @@ public class OrdersTest {
         HashMap<MenuOption, Integer> orders = createOrders(MUSHROOM_SOUP, 5, TAPAS, 15);
         Orders result = new Orders(orders);
         assertThat(result.getTotalOrderAmount()).isEqualTo(112500);
+    }
+
+    @DisplayName("할인 전 총주문 금액이 12만원 이상일 경우 증정품을 받을 수 있다.")
+    @Test
+    void 증정품_자격_여부() {
+        HashMap<MenuOption, Integer> orders = createOrders(RED_WINE, 5, TAPAS, 15);
+        Orders result = new Orders(orders);
+        assertThat(result.canReceiveGift()).isTrue();
     }
 
     private HashMap<MenuOption, Integer> createOrders(MenuOption option1, int quantity1,

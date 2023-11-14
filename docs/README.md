@@ -39,7 +39,7 @@
   - [ ] 특별 할인 날짜인지 확인한다. : 매주 일요일(3,10,17,24,31), 크리스마스(25) - DecemberCalender#hasStar
 - [ ] 증정 이벤트 적용 - Event#getGift
   - [ ] 할인 전 총주문 금액 >= 12만원이다. - Order#getTotalOrderPrice
-  - [ ] 샴페인 1개(25,000원) 증정 - Gift#receiveGift
+  - [ ] 샴페인 1개(25,000원) 증정 - Gift#canReceiveGift
 ## 이벤트 배지
 - [ ] 이벤트 배지 부여 - Event#getEventBadge
   - [ ] Enum으로 관리 - Badge
@@ -73,9 +73,9 @@
   - [x] "메뉴명 0개" 형식으로 순서는 자유롭게 출력
 - [x] 할인 전 총주문 금액 출력 - OutputView#printOrdersAmount
   - [x] "<할인 전 총주문 금액>"
-- [ ] 증정 메뉴 출력 - OutputView#printGiftMenu
-  - [ ] "<증정 메뉴>"
-  - [ ] 증정 이벤트에 해당하지 않는 경우 "없음" 출력
+- [x] 증정 메뉴 출력 - OutputView#printGiftMenu
+  - [x] "<증정 메뉴>"
+  - [x] 증정 이벤트에 해당하지 않는 경우 "없음" 출력
 - [ ] 혜택 내역 출력 - OutputView#printBenefitDetails
   - [ ] "<혜택 내역>"
   - [ ] "이벤트명: -0,000원" 형식으로 순서는 자유롭게 출력
