@@ -1,6 +1,5 @@
 package christmas.domain;
 
-import static christmas.util.ExceptionEnum.INVALID_ORDERS;
 import static christmas.util.ExceptionEnum.MAXIMUM_ORDER_COUNT_EXCEEDED;
 
 import christmas.domain.menu.MenuOption;
@@ -17,10 +16,10 @@ public class Orders {
     }
 
     private void validate(HashMap<String, Integer> orders) {
-        throwIfInvalidTotalCount(orders);
+        throwIfMaximumOrderCountExceeded(orders);
     }
 
-    private void throwIfInvalidTotalCount(HashMap<String, Integer> menusAndCount) {
+    private void throwIfMaximumOrderCountExceeded(HashMap<String, Integer> menusAndCount) {
         int totalCount = 0;
         for (Integer count : menusAndCount.values()) {
             totalCount+=count;
