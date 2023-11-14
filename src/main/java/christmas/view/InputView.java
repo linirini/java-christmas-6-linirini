@@ -10,7 +10,7 @@ import christmas.domain.Orders;
 import christmas.domain.menu.MenuOption;
 import christmas.util.DecemberCalender;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.regex.PatternSyntaxException;
 
 public class InputView {
 
@@ -35,28 +35,37 @@ public class InputView {
     public Orders inputOrders() {
         System.out.println(ORDERS_INPUT.getMessage());
         String input = readLine();
-        HashMap<MenuOption, Integer> menusAndCount = parseInputToMenusAndCount(input);
-        return new Orders(menusAndCount);
+        HashMap<MenuOption, Integer> orders = parseInputToOrders(input);
+        return new Orders(orders);
     }
 
-    private HashMap<MenuOption, Integer> parseInputToMenusAndCount(String input) {
+    private HashMap<MenuOption, Integer> parseInputToOrders(String input) {
         String[] menusWithCount = input.split(",");
-        HashMap<MenuOption, Integer> menusAndCount = parseToMenuAndCount(menusWithCount);
-        return menusAndCount;
+        HashMap<MenuOption, Integer> orders = parseMenusWithCountToOrders(menusWithCount);
+        return orders;
     }
 
-    private HashMap<MenuOption, Integer> parseToMenuAndCount(String[] menusWithCount) {
-        HashMap<MenuOption, Integer> menusAndCount = new HashMap<>();
+    private HashMap<MenuOption, Integer> parseMenusWithCountToOrders(String[] menusWithCount) {
+        HashMap<MenuOption, Integer> orders = new HashMap<>();
         for (String menuWithCount : menusWithCount) {
-            String[] menuAndCount = menuWithCount.split("-");
-            throwIfInvalidForm(menuAndCount);
+            String[] menuAndCount = parseToMenuAndCount(menuWithCount);
             MenuOption menuOption = convertMenuToMenuOption(menuAndCount[0]);
             int count = convertCountToInteger(menuAndCount[1]);
             throwIfInvalidCount(count);
-            throwIfAlreadyOrderedMenu(menusAndCount, menuOption);
-            menusAndCount.put(menuOption, count);
+            throwIfAlreadyOrderedMenu(orders, menuOption);
+            orders.put(menuOption, count);
         }
-        return menusAndCount;
+        return orders;
+    }
+
+    private String[] parseToMenuAndCount(String menuWithCount) {
+        try{
+            String[] menuAndCount = menuWithCount.split("-");
+            throwIfInvalidForm(menuAndCount);
+            return menuAndCount;
+        }catch (Exception E){
+            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
+        }
     }
 
     private void throwIfInvalidForm(String[] menuAndCount) {
@@ -66,11 +75,6 @@ public class InputView {
     }
 
     private MenuOption convertMenuToMenuOption(String menu) {
-        try{
-            return null;
-        }catch(Exception e){
-
-        }
         return null;
     }
 
