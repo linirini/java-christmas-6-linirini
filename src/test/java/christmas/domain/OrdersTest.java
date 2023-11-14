@@ -55,13 +55,7 @@ public class OrdersTest {
         assertThat(result.getTotalOrderAmount()).isEqualTo(112500);
     }
 
-    @DisplayName("할인 전 총주문 금액이 12만원 이상일 경우 증정품을 받을 수 있다.")
-    @Test
-    void 증정품_자격_여부() {
-        HashMap<MenuOption, Integer> orders = createOrders(RED_WINE, 5, TAPAS, 15);
-        Orders result = new Orders(orders);
-        assertThat(result.canReceiveGift()).isTrue();
-    }
+
 
     private HashMap<MenuOption, Integer> createOrders(MenuOption option1, int quantity1,
             MenuOption option2, int quantity2) {

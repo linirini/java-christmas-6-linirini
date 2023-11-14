@@ -51,14 +51,10 @@ public class Orders {
         return orderedMenusAndCount;
     }
 
-    public boolean canReceiveGift(){
-        return getTotalOrderAmount()>=120000;
-    }
-
-    public int getTotalOrderAmount(){
+    public int getTotalOrderAmount() {
         int amount = 0;
         for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
-            amount +=entry.getKey().getPrice()*entry.getValue();
+            amount += entry.getKey().getPrice() * entry.getValue();
         }
         return amount;
     }

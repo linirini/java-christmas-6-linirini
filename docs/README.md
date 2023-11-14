@@ -38,8 +38,8 @@
   - [ ] 이벤트 달력에 별이 있으면 총주문 금액에서 1000원 할인 - SpecialDiscount#discount
   - [ ] 특별 할인 날짜인지 확인한다. : 매주 일요일(3,10,17,24,31), 크리스마스(25) - DecemberCalender#hasStar
 - [ ] 증정 이벤트 적용 - Event#getGift
-  - [ ] 할인 전 총주문 금액 >= 12만원이다. - Order#getTotalOrderPrice
-  - [ ] 샴페인 1개(25,000원) 증정 - Gift#canReceiveGift
+  - [x] 할인 전 총주문 금액 >= 12만원이다. - Order#getTotalOrderPrice
+  - [x] 샴페인 1개(25,000원) 증정 - Gift#canReceiveGift
 ## 이벤트 배지
 - [ ] 이벤트 배지 부여 - Event#getEventBadge
   - [ ] Enum으로 관리 - Badge
