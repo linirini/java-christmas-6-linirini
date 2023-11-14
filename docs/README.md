@@ -77,8 +77,8 @@
   - [x] "<증정 메뉴>"
   - [x] 증정 이벤트에 해당하지 않는 경우 "없음" 출력
 - [ ] 혜택 내역 출력 - OutputView#printBenefitDetails
-  - [ ] "<혜택 내역>"
-  - [ ] "이벤트명: -0,000원" 형식으로 순서는 자유롭게 출력
+  - [x] "<혜택 내역>"
+  - [x] "이벤트명: -0,000원" 형식으로 순서는 자유롭게 출력
     - [x] 크리스마스 할인은 "크리스마스 디데이 할인: " 형식으로 출력 - OutputView#printChristmasDdayDiscountBenefit
     - [x] 요일 할인은 "평일 할인: ", "주말 할인:" 형식으로 출력 - OutputView#printWeekDiscountBenefit
     - [x] 특별 할인은 "특별 할인: " 형식으로 출력 - OutputView#printWeekendDiscountBenefit

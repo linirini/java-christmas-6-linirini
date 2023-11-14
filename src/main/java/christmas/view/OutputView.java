@@ -1,5 +1,6 @@
 package christmas.view;
 
+import static christmas.view.viewenum.OutputEnum.BENEFIT_DETAIL_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.COUNT_UNIT;
 import static christmas.view.viewenum.OutputEnum.GIFT_BENEFIT_OUTPUT;
@@ -29,7 +30,7 @@ public class OutputView {
     public void printGiftMenu(HashMap<String, Integer> gift) {
         System.out.println(GIFT_MENU_OUTPUT.getMessage());
         if (gift.isEmpty()) {
-            System.out.println(NONE.getMessage());
+            printNone();
             return;
         }
         printMenus(gift);
@@ -41,7 +42,11 @@ public class OutputView {
         }
     }
 
-    private void printChristmasDdayDiscountBenefit(int amount) {
+    public void printBenefitDetails(){
+        System.out.println(BENEFIT_DETAIL_OUTPUT.getMessage());
+    }
+
+    public void printChristmasDdayDiscountBenefit(int amount) {
         if(amount!=0) {
             System.out.println(
                     CHRISTMAS_D_DAY_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
@@ -49,25 +54,29 @@ public class OutputView {
         }
     }
 
-    private void printWeekDiscountBenefit(int amount) {
+    public void printWeekDiscountBenefit(int amount) {
         if(amount!=0) {
             System.out.println(WEEK_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
                     + MONEY_UNIT.getMessage());
         }
     }
 
-    private void printWeekendDiscountBenefit(int amount) {
+    public void printWeekendDiscountBenefit(int amount) {
         if(amount!=0) {
             System.out.println(WEEKEND_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
                     + MONEY_UNIT.getMessage());
         }
     }
 
-    private void printGiftBenefit(int amount) {
+    public void printGiftBenefit(int amount) {
         if(amount!=0) {
             System.out.println(GIFT_BENEFIT_OUTPUT.getMessage() + String.format("-%,d", amount)
                     + MONEY_UNIT.getMessage());
         }
+    }
+
+    public void printNone(){
+        System.out.println(NONE.getMessage());
     }
 
 }
