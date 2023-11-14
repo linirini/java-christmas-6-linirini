@@ -59,4 +59,8 @@ public class Orders {
         return amount;
     }
 
+    public boolean canReceiveGift(){
+        return getTotalOrderAmount()>=120000;
+    }
+
 }
