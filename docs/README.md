@@ -29,11 +29,11 @@
     - 최종 25일엔 3400원 할인
   - [ ] 총 주문 금액에서 해당 금액만큼 할인 - Event#christmasDdayDiscount
 - [ ] 요일 할인 적용 - Event#dayOfWeekDiscount
-  - [ ] 주말인지 확인한다. - DecemberCalender#isWeekend
-  - [ ] 평일 할인(일~목) : 디저트 메뉴 1개당 2023원 할인 - DayOfWeekDiscount#discount
-    - [ ] 디저트 메뉴 개수를 구한다. - Orders#getDessertCount
-  - [ ] 주말 할인(금~토) : 메인 메뉴 1개당 2023원 할인 - DayOfWeekDiscount#discount
-    - [ ] 메인 매뉴 개수를 구한다. - Orders#getMainDishCount
+  - [x] 주말인지 확인한다. - DecemberCalender#isWeekend
+  - [x] 평일 할인(일~목) : 디저트 메뉴 1개당 2023원 할인 - DayOfWeekDiscount#discount
+    - [x] 디저트 메뉴 개수를 구한다. - Orders#getDessertCount
+  - [x] 주말 할인(금~토) : 메인 메뉴 1개당 2023원 할인 - DayOfWeekDiscount#discount
+    - [x] 메인 매뉴 개수를 구한다. - Orders#getMainDishCount
 - [ ] 특별 할인 적용 - Event#specialDiscount
   - [ ] 이벤트 달력에 별이 있으면 총주문 금액에서 1000원 할인 - SpecialDiscount#discount
   - [ ] 특별 할인 날짜인지 확인한다. : 매주 일요일(3,10,17,24,31), 크리스마스(25) - DecemberCalender#hasStar
