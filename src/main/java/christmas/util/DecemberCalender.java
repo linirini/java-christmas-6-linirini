@@ -1,6 +1,7 @@
 package christmas.util;
 
 import java.time.DayOfWeek;
+import java.util.Arrays;
 
 public enum DecemberCalender {
 
@@ -26,6 +27,10 @@ public enum DecemberCalender {
     public static boolean isWeekend(int date) {
         DayOfWeek day = DECEMBER.startingDayOfWeek.plus(date - 1);
         return day == DayOfWeek.FRIDAY || day == DayOfWeek.SATURDAY;
+    }
+
+    public static boolean hasStar(int date) {
+        return Arrays.stream(DECEMBER.starDates).anyMatch(starDates -> starDates == date);
     }
 
 }
