@@ -6,18 +6,17 @@ import static christmas.view.viewenum.InputEnum.ORDERS_INPUT;
 import static christmas.view.viewenum.InputEnum.VISITING_DATE_INPUT;
 
 import christmas.domain.Orders;
-import christmas.domain.menu.MenuOption;
 import christmas.util.DecemberCalender;
 import java.util.HashMap;
 
 public class InputView {
 
-    public int inputVisitingDate(){
+    public int inputVisitingDate() {
         System.out.println(VISITING_DATE_INPUT.getMessage());
         int date;
         try {
             date = Integer.parseInt(readLine());
-        }catch (NumberFormatException NFE){
+        } catch (NumberFormatException NFE) {
             throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
         throwIfInvalidDate(date);
@@ -25,27 +24,43 @@ public class InputView {
     }
 
     private void throwIfInvalidDate(int date) {
-        if(!DecemberCalender.isValidDate(date)){
+        if (!DecemberCalender.isValidDate(date)) {
             throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
     }
 
-    public Orders inputOrders(){
+    public Orders inputOrders() {
         System.out.println(ORDERS_INPUT.getMessage());
         String input = readLine();
-        HashMap<String,Integer> orders = parseInputToOrders(input);
-        return new Orders(orders);
+        HashMap<String, Integer> menusAndCount = parseInputToMenusAndCount(input);
+        return new Orders(menusAndCount);
     }
 
-    private HashMap<String, Integer> parseInputToOrders(String input) {
+    private HashMap<String, Integer> parseInputToMenusAndCount(String input) {
         String[] menusWithCount = input.split(",");
-        HashMap<String, Integer> orders = parseToMenuAndCount(menusWithCount);
-        return orders;
+        HashMap<String, Integer> menusAndCount = parseToMenuAndCount(menusWithCount);
+        return menusAndCount;
     }
 
     private HashMap<String, Integer> parseToMenuAndCount(String[] menusWithCount) {
-        return null;
+        HashMap<String, Integer> menusAndCount = new HashMap<>();
+        int totalCount = 0;
+        for (String menuWithCount : menusWithCount) {
+            String[] menuAndCount = menuWithCount.split("-");
+            String menu = menuAndCount[0];
+            int count = convertCountToInteger(menuAndCount[1]);
+            menusAndCount.put(menu, count);
+            totalCount += count;
+        }
+        return menusAndCount;
     }
 
+    private int convertCountToInteger(String count) {
+        try {
+            return Integer.parseInt(count);
+        } catch (NumberFormatException NFE) {
+            throw new IllegalArgumentException();
+        }
+    }
 
 }
