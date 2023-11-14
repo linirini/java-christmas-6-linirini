@@ -9,7 +9,6 @@ import christmas.domain.Orders;
 import christmas.domain.menu.MenuOption;
 import christmas.util.DecemberCalender;
 import java.util.HashMap;
-import java.util.List;
 
 public class InputView {
 
@@ -34,12 +33,19 @@ public class InputView {
     public Orders inputOrders(){
         System.out.println(ORDERS_INPUT.getMessage());
         String input = readLine();
-        HashMap<MenuOption,Integer> orders = parseInputIntoMenus(input);
+        HashMap<String,Integer> orders = parseInputToOrders(input);
         return new Orders(orders);
     }
 
-    private HashMap<MenuOption, Integer> parseInputIntoMenus(String input) {
+    private HashMap<String, Integer> parseInputToOrders(String input) {
+        String[] menusWithCount = input.split(",");
+        HashMap<String, Integer> orders = parseToMenuAndCount(menusWithCount);
+        return orders;
+    }
+
+    private HashMap<String, Integer> parseToMenuAndCount(String[] menusWithCount) {
         return null;
     }
+
 
 }

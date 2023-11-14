@@ -8,6 +8,12 @@ public class Orders {
     private final HashMap<MenuOption,Integer> orders;
 
 
-    public Orders(HashMap<MenuOption, Integer> orders) {this.orders = orders;}
+    public Orders(HashMap<String, Integer> orders) {
+        this.orders = convertToOrders(orders);
+    }
+
+    private HashMap<MenuOption, Integer> convertToOrders(HashMap<String, Integer> orders) {
+        return null;
+    }
 
 }
