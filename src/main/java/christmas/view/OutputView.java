@@ -6,6 +6,8 @@ import static christmas.view.viewenum.OutputEnum.MONEY_UNIT;
 import static christmas.view.viewenum.OutputEnum.NONE;
 import static christmas.view.viewenum.OutputEnum.ORDER_AMOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.ORDER_MENU_OUTPUT;
+import static christmas.view.viewenum.OutputEnum.WEEKEND_DISCOUNT_OUTPUT;
+import static christmas.view.viewenum.OutputEnum.WEEK_DISCOUNT_OUTPUT;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -35,6 +37,18 @@ public class OutputView {
         for (Entry<String, Integer> entry : menus.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue() + COUNT_UNIT.getMessage());
         }
+    }
+
+    private void printWeekDiscount(int amount) {
+        System.out.println(WEEK_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
+                + MONEY_UNIT.getMessage());
+
+    }
+
+    private void printWeekendDiscount(int amount) {
+        System.out.println(WEEKEND_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
+                + MONEY_UNIT.getMessage());
+
     }
 
 }

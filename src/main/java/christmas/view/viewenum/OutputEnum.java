@@ -9,7 +9,9 @@ public enum OutputEnum {
     ORDER_AMOUNT_OUTPUT("<할인 전 총주문 금액>"),
     MONEY_UNIT("원"),
     NONE("없음"),
-    GIFT_MENU_OUTPUT("<증정 메뉴>");
+    GIFT_MENU_OUTPUT("<증정 메뉴>"),
+    WEEK_DISCOUNT_OUTPUT("평일 할인: "),
+    WEEKEND_DISCOUNT_OUTPUT("주말 할인: ");
 
     private final String message;
 
