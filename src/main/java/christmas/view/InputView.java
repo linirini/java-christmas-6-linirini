@@ -52,7 +52,7 @@ public class InputView {
             String menu = menuAndCount[0];
             int count = convertCountToInteger(menuAndCount[1]);
             throwIfInvalidCount(count);
-            throwIfAlreadyOrderedMenu(menusAndCount,menu);
+            throwIfAlreadyOrderedMenu(menusAndCount, menu);
             menusAndCount.put(menu, count);
             totalCount += count;
         }
@@ -61,7 +61,7 @@ public class InputView {
     }
 
     private void throwIfInvalidForm(String[] menuAndCount) {
-        if(menuAndCount.length!=2){
+        if (menuAndCount.length != 2) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
@@ -75,19 +75,19 @@ public class InputView {
     }
 
     private void throwIfInvalidCount(int count) {
-        if(count<1){
+        if (count < 1) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
 
     private void throwIfAlreadyOrderedMenu(HashMap<String, Integer> menusAndCount, String menu) {
-        if(menusAndCount.containsKey(menu)){
+        if (menusAndCount.containsKey(menu)) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
 
     private void throwIfInvalidTotalCount(int totalCount) {
-        if(totalCount>20){
+        if (totalCount > 20) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
