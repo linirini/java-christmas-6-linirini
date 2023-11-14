@@ -23,4 +23,11 @@ class ChristmasDdayDiscountTest {
         assertThat(christmasDdayDiscount.discount(date)).isEqualTo(1000 + 100 * (date - 1));
     }
 
+    @DisplayName("크리스마스 할인이 적용되지 않는다.")
+    @ValueSource(ints = {26, 31})
+    @ParameterizedTest
+    void 크리스마스_할인_금액_미적용(int date) {
+        assertThat(christmasDdayDiscount.discount(date)).isEqualTo(0);
+    }
+
 }
