@@ -8,7 +8,6 @@ public enum OutputEnum {
     COUNT_UNIT("개"),
     ORDER_AMOUNT_OUTPUT("<할인 전 총주문 금액>"),
     MONEY_UNIT("원"),
-    GIFT(CHAMPAGNE.getViewName()+" 1개"),
     NONE("없음"),
     GIFT_MENU_OUTPUT("<증정 메뉴>");
 

@@ -1,13 +1,13 @@
 package christmas.view;
 
 import static christmas.view.viewenum.OutputEnum.COUNT_UNIT;
-import static christmas.view.viewenum.OutputEnum.GIFT;
 import static christmas.view.viewenum.OutputEnum.GIFT_MENU_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.MONEY_UNIT;
 import static christmas.view.viewenum.OutputEnum.NONE;
 import static christmas.view.viewenum.OutputEnum.ORDER_AMOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.ORDER_MENU_OUTPUT;
 
+import christmas.domain.menu.MenuOption;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -25,13 +25,15 @@ public class OutputView {
         System.out.println(String.format("%,d", amount) + MONEY_UNIT.getMessage());
     }
 
-    public void printGiftMenu(boolean receiveGift) {
+    public void printGiftMenu(HashMap<MenuOption,Integer> gift) {
         System.out.println(GIFT_MENU_OUTPUT.getMessage());
-        if (receiveGift) {
-            System.out.println(GIFT.getMessage());
+        if (gift.isEmpty()) {
+            System.out.println(NONE.getMessage());
             return;
         }
-        System.out.println(NONE.getMessage());
+        for (Entry<MenuOption, Integer> entry : gift.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue() + COUNT_UNIT.getMessage());
+        }
     }
 
 }
