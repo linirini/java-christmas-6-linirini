@@ -2,6 +2,7 @@ package christmas.util;
 
 import static christmas.util.DecemberCalender.isAfterChristmas;
 import static christmas.util.DecemberCalender.isValidDate;
+import static christmas.util.DecemberCalender.isWeekend;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
@@ -36,6 +37,20 @@ class DecemberCalenderTest {
     @ValueSource(ints = {26, 29})
     void 크리스마스_후(int date) {
         assertThat(isAfterChristmas(date)).isTrue();
+    }
+
+    @DisplayName("평일이다.")
+    @ParameterizedTest
+    @ValueSource(ints = {18, 31})
+    void 평일(int date) {
+        assertThat(isWeekend(date)).isFalse();
+    }
+
+    @DisplayName("주말이다.")
+    @ParameterizedTest
+    @ValueSource(ints = {1, 22})
+    void 주말(int date) {
+        assertThat(isWeekend(date)).isTrue();
     }
 
 }
