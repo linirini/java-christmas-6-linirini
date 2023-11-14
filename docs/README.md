@@ -71,8 +71,8 @@
 - [x] 주문 메뉴 출력 - OutputView#printOrderedMenus
   - [x] "<주문 메뉴>" 
   - [x] "메뉴명 0개" 형식으로 순서는 자유롭게 출력
-- [ ] 할인 전 총주문 금액 출력 - OutputView#printOrdersPrice
-  - [ ] "<할인 전 총주문 금액>"
+- [x] 할인 전 총주문 금액 출력 - OutputView#printOrdersAmount
+  - [x] "<할인 전 총주문 금액>"
 - [ ] 증정 메뉴 출력 - OutputView#printGiftMenu
   - [ ] "<증정 메뉴>"
   - [ ] 증정 이벤트에 해당하지 않는 경우 "없음" 출력
