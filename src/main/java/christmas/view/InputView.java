@@ -56,6 +56,7 @@ public class InputView {
             menusAndCount.put(menu, count);
             totalCount += count;
         }
+        throwIfInvalidTotalCount(totalCount);
         return menusAndCount;
     }
 
@@ -85,5 +86,10 @@ public class InputView {
         }
     }
 
+    private void throwIfInvalidTotalCount(int totalCount) {
+        if(totalCount>20){
+            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
+        }
+    }
 
 }
