@@ -7,8 +7,10 @@ import static christmas.view.viewenum.InputEnum.ORDERS_INPUT;
 import static christmas.view.viewenum.InputEnum.VISITING_DATE_INPUT;
 
 import christmas.domain.Orders;
+import christmas.domain.menu.MenuOption;
 import christmas.util.DecemberCalender;
 import java.util.HashMap;
+import java.util.Map;
 
 public class InputView {
 
@@ -33,26 +35,26 @@ public class InputView {
     public Orders inputOrders() {
         System.out.println(ORDERS_INPUT.getMessage());
         String input = readLine();
-        HashMap<String, Integer> menusAndCount = parseInputToMenusAndCount(input);
+        HashMap<MenuOption, Integer> menusAndCount = parseInputToMenusAndCount(input);
         return new Orders(menusAndCount);
     }
 
-    private HashMap<String, Integer> parseInputToMenusAndCount(String input) {
+    private HashMap<MenuOption, Integer> parseInputToMenusAndCount(String input) {
         String[] menusWithCount = input.split(",");
-        HashMap<String, Integer> menusAndCount = parseToMenuAndCount(menusWithCount);
+        HashMap<MenuOption, Integer> menusAndCount = parseToMenuAndCount(menusWithCount);
         return menusAndCount;
     }
 
-    private HashMap<String, Integer> parseToMenuAndCount(String[] menusWithCount) {
-        HashMap<String, Integer> menusAndCount = new HashMap<>();
+    private HashMap<MenuOption, Integer> parseToMenuAndCount(String[] menusWithCount) {
+        HashMap<MenuOption, Integer> menusAndCount = new HashMap<>();
         for (String menuWithCount : menusWithCount) {
             String[] menuAndCount = menuWithCount.split("-");
             throwIfInvalidForm(menuAndCount);
-            String menu = menuAndCount[0];
+            MenuOption menuOption = convertMenuToMenuOption(menuAndCount[0]);
             int count = convertCountToInteger(menuAndCount[1]);
             throwIfInvalidCount(count);
-            throwIfAlreadyOrderedMenu(menusAndCount, menu);
-            menusAndCount.put(menu, count);
+            throwIfAlreadyOrderedMenu(menusAndCount, menuOption);
+            menusAndCount.put(menuOption, count);
         }
         return menusAndCount;
     }
@@ -61,6 +63,15 @@ public class InputView {
         if (menuAndCount.length != 2) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
+    }
+
+    private MenuOption convertMenuToMenuOption(String menu) {
+        try{
+            return null;
+        }catch(Exception e){
+
+        }
+        return null;
     }
 
     private int convertCountToInteger(String count) {
@@ -77,8 +88,8 @@ public class InputView {
         }
     }
 
-    private void throwIfAlreadyOrderedMenu(HashMap<String, Integer> menusAndCount, String menu) {
-        if (menusAndCount.containsKey(menu)) {
+    private void throwIfAlreadyOrderedMenu(HashMap<MenuOption, Integer> menusAndCount, MenuOption menuOption) {
+        if (menusAndCount.containsKey(menuOption)) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
