@@ -51,6 +51,7 @@ public class InputView {
             throwIfInvalidForm(menuAndCount);
             String menu = menuAndCount[0];
             int count = convertCountToInteger(menuAndCount[1]);
+            throwIfInvalidCount(count);
             menusAndCount.put(menu, count);
             totalCount += count;
         }
@@ -68,6 +69,12 @@ public class InputView {
             return Integer.parseInt(count);
         } catch (NumberFormatException NFE) {
             throw new IllegalArgumentException();
+        }
+    }
+
+    private void throwIfInvalidCount(int count) {
+        if(count<1){
+            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
 
