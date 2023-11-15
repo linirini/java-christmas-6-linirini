@@ -24,7 +24,7 @@ import java.util.Map.Entry;
 
 public class OutputView {
 
-    public void printIntroduction(){
+    public void printEventPlannerIntroduction(){
         System.out.println(INTRODUCE_EVENT_PLANNER.getMessage());
     }
 
