@@ -14,4 +14,11 @@ class EventBenefitTest {
                 29023);
     }
 
+    @DisplayName("총할인 금액을 반환한다.")
+    @Test
+    void 총할인_금액_계산() {
+        assertThat(new EventBenefit(1000, 0, 2023, 1000, 25000).getTotalDiscountAmount()).isEqualTo(
+                4023);
+    }
+
 }
