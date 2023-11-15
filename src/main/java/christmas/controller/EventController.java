@@ -3,7 +3,7 @@ package christmas.controller;
 import christmas.domain.Orders;
 import christmas.domain.event.EventBenefit;
 import christmas.domain.event.EventPlanner;
-import christmas.domain.event.Gift;
+import christmas.domain.event.gift.Gift;
 import christmas.domain.event.badge.Badge;
 import christmas.view.InputView;
 import christmas.view.OutputView;

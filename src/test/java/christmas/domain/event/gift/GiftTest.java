@@ -1,7 +1,7 @@
-package christmas.domain.event;
+package christmas.domain.event.gift;
 
-import static christmas.domain.event.Gift.GIFT;
-import static christmas.domain.event.Gift.NO_GIFT;
+import static christmas.domain.event.gift.Gift.GIFT;
+import static christmas.domain.event.gift.Gift.NO_GIFT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;

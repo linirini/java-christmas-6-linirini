@@ -3,7 +3,6 @@ package christmas.domain.menu;
 import static christmas.domain.menu.MenuOption.NO_MENU;
 import static christmas.domain.menu.MenuOption.TAPAS;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

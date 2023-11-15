@@ -4,6 +4,7 @@ import christmas.domain.Orders;
 import christmas.domain.event.discount.ChristmasDdayDiscount;
 import christmas.domain.event.discount.DayOfTheWeekDiscount;
 import christmas.domain.event.discount.SpecialDiscount;
+import christmas.domain.event.gift.Gift;
 
 public class EventPlanner {
 

@@ -16,7 +16,7 @@ public enum MenuOption {
     ZERO_COKE("제로콜라", 3000),
     RED_WINE("레드와인", 60000),
     CHAMPAGNE("샴페인", 25000),
-    NO_MENU("없음",0);
+    NO_MENU("없음", 0);
 
     private final String viewName;
 

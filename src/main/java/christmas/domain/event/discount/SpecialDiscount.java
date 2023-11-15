@@ -6,8 +6,8 @@ public class SpecialDiscount {
 
     private final static int DISCOUNT = 1000;
 
-    public int discount(int date){
-        if(hasStar(date)){
+    public int discount(int date) {
+        if (hasStar(date)) {
             return DISCOUNT;
         }
         return 0;

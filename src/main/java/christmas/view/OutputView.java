@@ -20,7 +20,7 @@ import static christmas.view.viewenum.OutputEnum.WEEKEND_DISCOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.WEEK_DISCOUNT_OUTPUT;
 
 import christmas.domain.event.EventBenefit;
-import christmas.domain.event.Gift;
+import christmas.domain.event.gift.Gift;
 import java.util.HashMap;
 import java.util.Map.Entry;
 

@@ -65,8 +65,8 @@ public class Orders {
     public int getMainDishCount() {
         int count = 0;
         for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
-            if(findMenuType(entry.getKey().getViewName())==MAIN_DISH){
-                count+=entry.getValue();
+            if (findMenuType(entry.getKey().getViewName()) == MAIN_DISH) {
+                count += entry.getValue();
             }
         }
         return count;
@@ -75,8 +75,8 @@ public class Orders {
     public int getDessertCount() {
         int count = 0;
         for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
-            if(findMenuType(entry.getKey().getViewName())==DESSERT){
-                count+=entry.getValue();
+            if (findMenuType(entry.getKey().getViewName()) == DESSERT) {
+                count += entry.getValue();
             }
         }
         return count;

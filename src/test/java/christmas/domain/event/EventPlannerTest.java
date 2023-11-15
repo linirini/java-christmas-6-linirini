@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 import christmas.domain.Orders;
+import christmas.domain.event.gift.Gift;
 import christmas.domain.menu.MenuOption;
 import java.util.HashMap;
 import org.junit.jupiter.api.BeforeEach;

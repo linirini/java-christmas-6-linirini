@@ -29,7 +29,8 @@ public enum MenuType {
     }
 
     private static boolean hasMenuOption(MenuType group, String target) {
-        return Arrays.stream(group.containMenu).anyMatch(contain -> contain.getViewName().equals(target));
+        return Arrays.stream(group.containMenu)
+                .anyMatch(contain -> contain.getViewName().equals(target));
     }
 
 }
