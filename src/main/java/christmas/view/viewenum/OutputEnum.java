@@ -2,6 +2,7 @@ package christmas.view.viewenum;
 
 public enum OutputEnum {
 
+    INTRODUCE_EVENT_PLANNER("안녕하세요! 우테코 식당 12월 이벤트 플래너입니다."),
     ORDER_MENU_OUTPUT("<주문 메뉴>"),
     COUNT_UNIT("개"),
     ORDER_AMOUNT_OUTPUT("<할인 전 총주문 금액>"),

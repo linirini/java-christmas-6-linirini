@@ -7,6 +7,7 @@ import static christmas.view.viewenum.OutputEnum.EVENT_BADGE;
 import static christmas.view.viewenum.OutputEnum.EXPECTED_PAY_AMOUNT;
 import static christmas.view.viewenum.OutputEnum.GIFT_BENEFIT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.GIFT_MENU_OUTPUT;
+import static christmas.view.viewenum.OutputEnum.INTRODUCE_EVENT_PLANNER;
 import static christmas.view.viewenum.OutputEnum.MONEY_UNIT;
 import static christmas.view.viewenum.OutputEnum.NONE;
 import static christmas.view.viewenum.OutputEnum.ORDER_AMOUNT_OUTPUT;
@@ -22,6 +23,10 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class OutputView {
+
+    public void printIntroduction(){
+        System.out.println(INTRODUCE_EVENT_PLANNER.getMessage());
+    }
 
     public void printOrderedMenus(HashMap<String, Integer> menus) {
         System.out.println(ORDER_MENU_OUTPUT.getMessage());
@@ -43,7 +48,7 @@ public class OutputView {
         System.out.println(gift.getGiftName() + " " + gift.getCount() + COUNT_UNIT.getMessage());
     }
 
-    public void printNoneBenefit(EventBenefit eventBenefit) {
+    public void printNoneBenefit() {
         System.out.println(BENEFIT_DETAIL_OUTPUT.getMessage());
         System.out.println(NONE.getMessage());
     }
@@ -92,7 +97,7 @@ public class OutputView {
         }
     }
 
-    private void printTotalBenefitAmount(int amount) {
+    public void printTotalBenefitAmount(int amount) {
         System.out.println(TOTAL_BENEFIT_AMOUNT.getMessage());
         if (amount == 0) {
             printAmount(amount);
