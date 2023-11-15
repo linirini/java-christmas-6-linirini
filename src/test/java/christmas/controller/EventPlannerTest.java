@@ -1,8 +1,10 @@
-package christmas.domain;
+package christmas.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
+import christmas.controller.EventPlanner;
+import christmas.domain.Orders;
 import christmas.domain.event.EventBenefit;
 import christmas.domain.event.Gift;
 import christmas.domain.menu.MenuOption;

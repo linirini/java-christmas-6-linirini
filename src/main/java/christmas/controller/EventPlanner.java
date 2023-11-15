@@ -1,5 +1,6 @@
-package christmas.domain;
+package christmas.controller;
 
+import christmas.domain.Orders;
 import christmas.domain.event.EventBenefit;
 import christmas.domain.event.Gift;
 import christmas.domain.event.discount.ChristmasDdayDiscount;
