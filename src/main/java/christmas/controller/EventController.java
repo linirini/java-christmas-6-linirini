@@ -4,6 +4,7 @@ import christmas.domain.Orders;
 import christmas.domain.event.EventBenefit;
 import christmas.domain.event.EventPlanner;
 import christmas.domain.event.Gift;
+import christmas.domain.event.badge.Badge;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
@@ -27,6 +28,7 @@ public class EventController {
         EventBenefit eventBenefit = getEventBenefitAndPrintDetails(date, orders, gift);
         int benefitAmount = getTotalBenefitAmountAndPrint(eventBenefit);
         calculateExpectedPayAmountAndPrint(totalAmountBeforeDiscount, benefitAmount);
+        getEventBadgeAndPrint(benefitAmount);
     }
 
     private int inputDateUntilNoError() {
@@ -89,10 +91,17 @@ public class EventController {
         return totalBenefitAmount;
     }
 
-    private void calculateExpectedPayAmountAndPrint(int totalAmountBeforeDiscount, int benefitAmount) {
+    private void calculateExpectedPayAmountAndPrint(int totalAmountBeforeDiscount,
+            int benefitAmount) {
         outputView.printLineBreak();
         int payAmount = totalAmountBeforeDiscount - benefitAmount;
         outputView.printExpectedPayAmount(payAmount);
+    }
+
+    private void getEventBadgeAndPrint(int benefitAmount) {
+        outputView.printLineBreak();
+        Badge badge = Badge.determineBadge(benefitAmount);
+        outputView.printEventBadge(badge.getViewName());
     }
 
 
