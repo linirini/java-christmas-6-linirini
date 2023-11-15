@@ -9,7 +9,6 @@ import static christmas.view.viewenum.InputEnum.VISITING_DATE_INPUT;
 
 import christmas.domain.Orders;
 import christmas.domain.menu.MenuOption;
-import christmas.util.DecemberCalender;
 import java.util.HashMap;
 
 public class InputView {
@@ -81,7 +80,7 @@ public class InputView {
     }
 
     private void throwIfMenuNotExist(MenuOption menuOption) {
-        if(menuOption == MenuOption.NO_MENU){
+        if (menuOption == MenuOption.NO_MENU) {
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
@@ -90,7 +89,7 @@ public class InputView {
         try {
             return Integer.parseInt(count);
         } catch (NumberFormatException NFE) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
 
