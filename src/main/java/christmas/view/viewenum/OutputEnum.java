@@ -1,7 +1,5 @@
 package christmas.view.viewenum;
 
-import static christmas.domain.menu.MenuOption.CHAMPAGNE;
-
 public enum OutputEnum {
 
     ORDER_MENU_OUTPUT("<주문 메뉴>"),
@@ -16,7 +14,8 @@ public enum OutputEnum {
     WEEKEND_DISCOUNT_OUTPUT("주말 할인: "),
     GIFT_BENEFIT_OUTPUT("증정 이벤트: "),
     TOTAL_BENEFIT_AMOUNT("<총혜택 금액>"),
-    EXPECTED_PAY_AMOUNT("<할인 후 예상 결제 금액>");
+    EXPECTED_PAY_AMOUNT("<할인 후 예상 결제 금액>"),
+    EVENT_BADGE("<12월 이벤트 배지>");
 
     private final String message;
 

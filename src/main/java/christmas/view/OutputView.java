@@ -3,6 +3,7 @@ package christmas.view;
 import static christmas.view.viewenum.OutputEnum.BENEFIT_DETAIL_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.COUNT_UNIT;
+import static christmas.view.viewenum.OutputEnum.EVENT_BADGE;
 import static christmas.view.viewenum.OutputEnum.EXPECTED_PAY_AMOUNT;
 import static christmas.view.viewenum.OutputEnum.GIFT_BENEFIT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.GIFT_MENU_OUTPUT;
@@ -91,6 +92,11 @@ public class OutputView {
         System.out.println(EXPECTED_PAY_AMOUNT.getMessage());
         System.out.println(String.format("%,d", amount)
                 + MONEY_UNIT.getMessage());
+    }
+
+    public void printEventBadge(String viewName){
+        System.out.println(EVENT_BADGE.getMessage());
+        System.out.println(viewName);
     }
 
     public void printNone() {
