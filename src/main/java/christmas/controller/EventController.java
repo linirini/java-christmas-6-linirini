@@ -3,6 +3,7 @@ package christmas.controller;
 import christmas.domain.Orders;
 import christmas.domain.event.EventBenefit;
 import christmas.domain.event.EventPlanner;
+import christmas.domain.event.Gift;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
@@ -19,6 +20,9 @@ public class EventController {
         outputView.printEventPlannerIntroduction();
         int date = inputDateUntilNoError();
         Orders orders = inputOrdersUntilNoError();
+        outputView.printBenefitIntroductionAtDate(date);
+        outputView.printLineBreak();
+        outputView.printOrderedMenus(orders.getOrderedMenusAndCount());
     }
 
     private int inputDateUntilNoError() {
