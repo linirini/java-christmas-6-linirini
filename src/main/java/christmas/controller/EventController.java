@@ -24,8 +24,7 @@ public class EventController {
         printOrder(orders);
         int totalAmountBeforeDiscount = getTotalAmountBeforeDiscountAndPrint(orders);
         Gift gift = getGiftAndPrint(totalAmountBeforeDiscount);
-        EventBenefit eventBenefit = getEventBenefitAndPrintDetails(totalAmountBeforeDiscount, date,
-                orders, gift);
+        EventBenefit eventBenefit = getEventBenefitAndPrintDetails(date, orders, gift);
     }
 
     private int inputDateUntilNoError() {
@@ -67,18 +66,18 @@ public class EventController {
         return gift;
     }
 
-    private EventBenefit getEventBenefitAndPrintDetails(int totalAmountBeforeDiscount, int date,
+    private EventBenefit getEventBenefitAndPrintDetails(int date,
             Orders orders, Gift gift) {
         outputView.printLineBreak();
         EventBenefit eventBenefit;
-        if (!eventPlanner.isMinimumAmountForEventMet(totalAmountBeforeDiscount)) {
+        if (!eventPlanner.isMinimumAmountForEventMet(orders.getTotalOrderAmount())) {
             outputView.printNoneBenefit();
             eventBenefit = NO_BENEFIT;
             return eventBenefit;
         }
         eventBenefit = eventPlanner.calculateEventBenefit(date, orders, gift);
         outputView.printBenefitDetails(eventBenefit);
-        return eventBenefit
+        return eventBenefit;
     }
 
 
