@@ -50,6 +50,7 @@
         - 1만원 이상 : 트리
         - 2만원 이상 : 산타
 ## 이벤트 플래너
+- [x] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." - OutputView#introduceEventPlanner
 - `고객` 방문 날짜, 메뉴 미리 선택 -> `이벤트 플래너` 주문 메뉴, 할인 전 총주문 금액, 증정 메뉴, 혜택 내역, 총혜택 금액, 할인 후 예상 결제 금액, 12월 이벤트 배지 내용 명시
 ### `고객` 방문 날짜, 메뉴 미리 선택
 - [x] 방문 날짜 입력 - InputView#inputVisitingDate
@@ -69,6 +70,7 @@
   - [x] 올바르지 않은 메뉴 형식인 경우 : "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요."
   - [x] 중복 메뉴를 입력한 경우 : "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요."
 ### `이벤트 플래너` 주문 메뉴, 할인 전 총주문 금액, 증정 메뉴, 혜택 내역, 총혜택 금액, 할인 후 예상 결제 금액, 12월 이벤트 배지 내용 명시
+- [x] "12월 00일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!" - OutputView#printBenefitIntroductionAtDate
 - [x] 주문 메뉴 출력 - OutputView#printOrderedMenus
   - [x] "<주문 메뉴>" 
   - [x] "메뉴명 0개" 형식으로 순서는 자유롭게 출력
@@ -86,7 +88,7 @@
     - [x] 증정 이벤트는 "증정 이벤트: " 형식으로 출력 - OutputView#printGiftBenefit
   - [x] 고객에게 적용된 이벤트 내역만 출력
   - [x] 혜택 내역 없을 경우 "없음" 출력
-- [x] 총 혜택 금액 출력 - OutputView#printBenefitPrice
+- [x] 총 혜택 금액 출력 - OutputView#printTotalBenefitAmount
   - [x] "<총혜택 금액>"
   - [x] "-00,000원" 형식으로 출력
   - [x] 총혜택 금액 = 할인 금액 합게 + 증정 메뉴 가격 EventBenefit#getTotalEventBenefit

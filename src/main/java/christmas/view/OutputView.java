@@ -135,4 +135,8 @@ public class OutputView {
         System.out.println();
     }
 
+    public void printErrorMessage(String message) {
+        System.out.println(message);
+    }
+
 }
