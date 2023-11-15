@@ -4,7 +4,7 @@ public enum OutputEnum {
 
     EVENT_PLANNER_INTRODUCTION_OUTPUT("안녕하세요! 우테코 식당 12월 이벤트 플래너입니다."),
     DECEMBER_OUTPUT("12월"),
-    BENEFIT_INTRODUCTION_OUTPUT("에 우테코 식당에서 받을 이벤트 혜택 미리 보기!"),
+    BENEFIT_INTRODUCTION_OUTPUT("일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!"),
     ORDER_MENU_OUTPUT("<주문 메뉴>"),
     COUNT_UNIT("개"),
     ORDER_AMOUNT_OUTPUT("<할인 전 총주문 금액>"),
