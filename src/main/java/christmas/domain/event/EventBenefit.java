@@ -17,6 +17,10 @@ public class EventBenefit {
         this.giftBenefit = giftBenefit;
     }
 
+    public static EventBenefit getDefaultEventBenefit() {
+        return new EventBenefit(0,0,0,0,0);
+    }
+
     public int getTotalEventBenefit() {
         return christmasDdayBenefit + weekBenefit + weekendBenefit + specialBenefit + giftBenefit;
     }
