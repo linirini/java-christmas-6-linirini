@@ -44,7 +44,7 @@
 ## 이벤트 배지
 - [ ] 이벤트 배지 부여 - Event#getEventBadge
   - [x] Enum으로 관리 - Badge
-    - [ ] 총 혜택 금액에 따라 이벤트 배지 다르게 부여 - Badge#determineBadge
+    - [x] 총 혜택 금액에 따라 이벤트 배지 다르게 부여 - Badge#determineBadge
     - [ ] 총 혜택 금액 계산하기 - Event#getTotalEventPrice
         - 5천원 이상 : 별
         - 1만원 이상 : 트리
