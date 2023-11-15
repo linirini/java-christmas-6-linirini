@@ -31,7 +31,7 @@ class EventPlannerTest {
     @ParameterizedTest
     @ValueSource(ints = {125000, 10000})
     void 증정품_수여(int amount) {
-        assertThat(Gift.receiveGift(amount)).isEqualTo(expectedGift(amount));
+        assertThat(eventPlanner.presentGift(amount)).isEqualTo(expectedGift(amount));
     }
 
     private boolean expected(int amount) {

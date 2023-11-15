@@ -18,7 +18,7 @@ public class EventPlanner {
         return amount >= MINIMUM_AMOUNT;
     }
 
-    public Gift getGift(int totalAmountBeforeDiscount) {
+    public Gift presentGift(int totalAmountBeforeDiscount) {
         return Gift.receiveGift(totalAmountBeforeDiscount);
     }
 
