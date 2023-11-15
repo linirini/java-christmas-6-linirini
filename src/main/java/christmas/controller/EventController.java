@@ -21,8 +21,8 @@ public class EventController {
         int date = inputDateUntilNoError();
         Orders orders = inputOrdersUntilNoError();
         outputView.printBenefitIntroductionAtDate(date);
-        outputView.printLineBreak();
-        outputView.printOrderedMenus(orders.getOrderedMenusAndCount());
+        printOrder(orders);
+        int totalAmountBeforeDiscount = getTotalAmountBeforeDiscountAndPrint(orders);
     }
 
     private int inputDateUntilNoError() {
@@ -43,6 +43,18 @@ public class EventController {
                 outputView.printErrorMessage(e.getMessage());
             }
         }
+    }
+
+    private void printOrder(Orders orders) {
+        outputView.printLineBreak();
+        outputView.printOrderedMenus(orders.getOrderedMenusAndCount());
+    }
+
+    private int getTotalAmountBeforeDiscountAndPrint(Orders orders) {
+        outputView.printLineBreak();
+        int totalAmountBeforeDiscount = orders.getTotalOrderAmount();
+        outputView.printOrdersAmount(totalAmountBeforeDiscount);
+        return totalAmountBeforeDiscount;
     }
 
 
