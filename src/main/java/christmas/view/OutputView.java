@@ -124,4 +124,8 @@ public class OutputView {
         System.out.println(viewName);
     }
 
+    public void printLineBreak() {
+        System.out.println();
+    }
+
 }
