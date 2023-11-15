@@ -6,7 +6,7 @@ public enum Gift {
 
     GIFT(MenuOption.CHAMPAGNE, 1),
 
-    NO_GIFT(MenuOption.NONE, 0);
+    NO_GIFT(MenuOption.NO_MENU, 0);
 
     private static int MINIMUM = 120000;
 

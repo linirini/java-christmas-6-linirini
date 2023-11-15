@@ -75,9 +75,13 @@ public class InputView {
     }
 
     private MenuOption convertMenuToMenuOption(String menu) {
-        try {
-            return MenuOption.findMenuOption(menu);
-        } catch (RuntimeException RE) {
+        MenuOption menuOption = MenuOption.findMenuOption(menu);
+        throwIfMenuNotExist(menuOption);
+        return menuOption;
+    }
+
+    private void throwIfMenuNotExist(MenuOption menuOption) {
+        if(menuOption == MenuOption.NO_MENU){
             throw new IllegalArgumentException(INVALID_ORDERS.getMessage());
         }
     }
