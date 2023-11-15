@@ -51,6 +51,7 @@ public class OutputView {
         System.out.println(GIFT_MENU_OUTPUT.getMessage());
         if (gift == Gift.NO_GIFT) {
             System.out.println(gift.getGiftName());
+            return;
         }
         System.out.println(gift.getGiftName() + " " + gift.getCount() + COUNT_UNIT.getMessage());
     }
