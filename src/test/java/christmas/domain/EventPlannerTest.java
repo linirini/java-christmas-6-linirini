@@ -2,9 +2,13 @@ package christmas.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import christmas.domain.event.EventBenefit;
 import christmas.domain.event.Gift;
+import christmas.domain.menu.MenuOption;
+import java.util.HashMap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -34,6 +38,22 @@ class EventPlannerTest {
         assertThat(eventPlanner.presentGift(amount)).isEqualTo(expectedGift(amount));
     }
 
+    @DisplayName("이벤트 혜택 내역을 계산한다.")
+    @Test
+    void 이벤트_혜택_내역() {
+        /**
+         * 주문 메뉴 : 티본스테이크 2개, 초코케이크 1개
+         * 크리스마스 디데이 할인 : 3400원
+         * 평일 할인 : 2023원
+         * 주말 할인 : -
+         * 특별 할인 : 0원
+         * 증정품 이벤트 : 25000원
+         */
+        EventBenefit eventBenefit = eventPlanner.calculateEventBenefit(25, createOrders(),
+                Gift.GIFT);
+        assertThat(eventBenefit.getTotalEventBenefit()).isEqualTo(3400 + 2023 + 0 + 1000 + 25000);
+    }
+
     private boolean expected(int amount) {
         return amount >= MINIMUM_ORDER_AMOUNT;
     }
@@ -43,6 +63,13 @@ class EventPlannerTest {
             return Gift.GIFT;
         }
         return Gift.NO_GIFT;
+    }
+
+    private Orders createOrders() {
+        HashMap<MenuOption, Integer> orders = new HashMap<>();
+        orders.put(MenuOption.T_BONE_STEAK, 2);
+        orders.put(MenuOption.CHOCO_CAKE, 1);
+        return new Orders(orders);
     }
 
 }

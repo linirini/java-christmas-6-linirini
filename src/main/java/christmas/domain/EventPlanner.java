@@ -22,8 +22,7 @@ public class EventPlanner {
         return Gift.receiveGift(totalAmountBeforeDiscount);
     }
 
-    public EventBenefit getEventBenefit(int date, Orders orders, int totalAmountBeforeDiscount,
-            Gift gift) {
+    public EventBenefit calculateEventBenefit(int date, Orders orders, Gift gift) {
         return new EventBenefit(christmasDdayDiscount.discount(date),
                 dayOfTheWeekDiscount.weekDiscount(date, orders),
                 dayOfTheWeekDiscount.weekendDiscount(date, orders), specialDiscount.discount(date),
