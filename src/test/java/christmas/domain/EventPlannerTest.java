@@ -1,6 +1,7 @@
 package christmas.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 import christmas.domain.event.EventBenefit;
 import christmas.domain.event.Gift;
@@ -51,11 +52,13 @@ class EventPlannerTest {
                 Gift.NO_GIFT);
 
         //then
-        assertThat(eventBenefit.getChristmasDdayBenefit()).isEqualTo(3400);
-        assertThat(eventBenefit.getWeekBenefit()).isEqualTo(4046);
-        assertThat(eventBenefit.getWeekendBenefit()).isEqualTo(0);
-        assertThat(eventBenefit.getSpecialBenefit()).isEqualTo(1000);
-        assertThat(eventBenefit.getGiftBenefit()).isEqualTo(0);
+        assertAll(
+                () -> assertThat(eventBenefit.getChristmasDdayBenefit()).isEqualTo(3400),
+                () -> assertThat(eventBenefit.getWeekBenefit()).isEqualTo(4046),
+                () -> assertThat(eventBenefit.getWeekendBenefit()).isZero(),
+                () -> assertThat(eventBenefit.getSpecialBenefit()).isEqualTo(1000),
+                () -> assertThat(eventBenefit.getGiftBenefit()).isZero()
+        );
     }
 
     private boolean expected(int amount) {
