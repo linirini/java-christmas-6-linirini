@@ -1,8 +1,6 @@
-package christmas.controller;
+package christmas.domain.event;
 
 import christmas.domain.Orders;
-import christmas.domain.event.EventBenefit;
-import christmas.domain.event.Gift;
 import christmas.domain.event.discount.ChristmasDdayDiscount;
 import christmas.domain.event.discount.DayOfTheWeekDiscount;
 import christmas.domain.event.discount.SpecialDiscount;
@@ -11,9 +9,9 @@ public class EventPlanner {
 
     private static final int MINIMUM_AMOUNT = 10000;
 
-    private ChristmasDdayDiscount christmasDdayDiscount = new ChristmasDdayDiscount();
-    private DayOfTheWeekDiscount dayOfTheWeekDiscount = new DayOfTheWeekDiscount();
-    private SpecialDiscount specialDiscount = new SpecialDiscount();
+    private final ChristmasDdayDiscount christmasDdayDiscount = new ChristmasDdayDiscount();
+    private final DayOfTheWeekDiscount dayOfTheWeekDiscount = new DayOfTheWeekDiscount();
+    private final SpecialDiscount specialDiscount = new SpecialDiscount();
 
     public boolean isMinimumAmountForEventMet(int amount) {
         return amount >= MINIMUM_AMOUNT;

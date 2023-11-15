@@ -1,9 +1,9 @@
-package christmas.controller;
+package christmas.domain.event;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-import christmas.controller.EventPlanner;
+import christmas.domain.event.EventPlanner;
 import christmas.domain.Orders;
 import christmas.domain.event.EventBenefit;
 import christmas.domain.event.Gift;
