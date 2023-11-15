@@ -92,9 +92,10 @@ public class EventController {
     }
 
     private void calculateExpectedPayAmountAndPrint(int totalAmountBeforeDiscount,
-            int benefitAmount) {
+            int discountAmount) {
         outputView.printLineBreak();
-        int payAmount = totalAmountBeforeDiscount - benefitAmount;
+        int payAmount = eventPlanner.calculateExpectedPayAmount(totalAmountBeforeDiscount,
+                discountAmount);
         outputView.printExpectedPayAmount(payAmount);
     }
 
