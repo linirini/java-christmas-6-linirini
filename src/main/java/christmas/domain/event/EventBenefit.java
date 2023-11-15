@@ -21,4 +21,24 @@ public class EventBenefit {
         return christmasDdayBenefit + weekBenefit + weekendBenefit + specialBenefit + giftBenefit;
     }
 
+    public int getChristmasDdayBenefit() {
+        return christmasDdayBenefit;
+    }
+
+    public int getWeekBenefit() {
+        return weekBenefit;
+    }
+
+    public int getWeekendBenefit() {
+        return weekendBenefit;
+    }
+
+    public int getSpecialBenefit() {
+        return specialBenefit;
+    }
+
+    public int getGiftBenefit() {
+        return giftBenefit;
+    }
+
 }

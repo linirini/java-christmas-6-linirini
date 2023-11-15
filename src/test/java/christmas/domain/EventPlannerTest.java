@@ -41,17 +41,21 @@ class EventPlannerTest {
     @DisplayName("이벤트 혜택 내역을 계산한다.")
     @Test
     void 이벤트_혜택_내역() {
-        /**
-         * 주문 메뉴 : 티본스테이크 2개, 초코케이크 1개
-         * 크리스마스 디데이 할인 : 3400원
-         * 평일 할인 : 2023원
-         * 주말 할인 : -
-         * 특별 할인 : 0원
-         * 증정품 이벤트 : 25000원
-         */
-        EventBenefit eventBenefit = eventPlanner.calculateEventBenefit(25, createOrders(),
-                Gift.GIFT);
-        assertThat(eventBenefit.getTotalEventBenefit()).isEqualTo(3400 + 2023 + 0 + 1000 + 25000);
+        //given
+        HashMap<MenuOption, Integer> orders = new HashMap<>();
+        orders.put(MenuOption.T_BONE_STEAK, 1);
+        orders.put(MenuOption.CHOCO_CAKE, 2);
+
+        //when
+        EventBenefit eventBenefit = eventPlanner.calculateEventBenefit(25, new Orders(orders),
+                Gift.NO_GIFT);
+
+        //then
+        assertThat(eventBenefit.getChristmasDdayBenefit()).isEqualTo(3400);
+        assertThat(eventBenefit.getWeekBenefit()).isEqualTo(4046);
+        assertThat(eventBenefit.getWeekendBenefit()).isEqualTo(0);
+        assertThat(eventBenefit.getSpecialBenefit()).isEqualTo(1000);
+        assertThat(eventBenefit.getGiftBenefit()).isEqualTo(0);
     }
 
     private boolean expected(int amount) {
@@ -63,13 +67,6 @@ class EventPlannerTest {
             return Gift.GIFT;
         }
         return Gift.NO_GIFT;
-    }
-
-    private Orders createOrders() {
-        HashMap<MenuOption, Integer> orders = new HashMap<>();
-        orders.put(MenuOption.T_BONE_STEAK, 2);
-        orders.put(MenuOption.CHOCO_CAKE, 1);
-        return new Orders(orders);
     }
 
 }
