@@ -18,11 +18,15 @@ public class EventBenefit {
     }
 
     public static EventBenefit getDefaultEventBenefit() {
-        return new EventBenefit(0,0,0,0,0);
+        return new EventBenefit(0, 0, 0, 0, 0);
     }
 
     public int getTotalEventBenefit() {
         return christmasDdayBenefit + weekBenefit + weekendBenefit + specialBenefit + giftBenefit;
+    }
+
+    public int getTotalDiscountAmount() {
+        return christmasDdayBenefit + weekBenefit + weekendBenefit + specialBenefit;
     }
 
     public int getChristmasDdayBenefit() {
