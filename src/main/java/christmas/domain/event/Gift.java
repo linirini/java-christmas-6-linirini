@@ -1,23 +1,36 @@
 package christmas.domain.event;
 
 import christmas.domain.menu.MenuOption;
-import java.util.HashMap;
 
-public class Gift {
+public enum Gift {
 
-    private final static MenuOption GIFT = MenuOption.CHAMPAGNE;
-    private final static int COUNT = 1;
+    GIFT(MenuOption.CHAMPAGNE, 1),
 
-    public HashMap<String,Integer> receiveGift(int amount){
-        HashMap<String,Integer> gift = new HashMap<>();
-        if(canReceiveGift(amount)){
-            gift.put(GIFT.getViewName(),COUNT);
-        }
-        return gift;
+    NO_GIFT(MenuOption.NONE, 0);
+
+    private static int MINIMUM = 120000;
+
+    private final MenuOption menuOption;
+    private final int count;
+
+    Gift(MenuOption menuOption, int count) {
+        this.menuOption = menuOption;
+        this.count = count;
     }
 
-    private boolean canReceiveGift(int amount) {
-        return amount >= 120000;
+    public static Gift receiveGift(int amount) {
+        if (canReceiveGift(amount)) {
+            return GIFT;
+        }
+        return NO_GIFT;
+    }
+
+    private static boolean canReceiveGift(int amount) {
+        return amount >= MINIMUM;
+    }
+
+    public int getGiftBenefit() {
+        return menuOption.getPrice() * count;
     }
 
 }
