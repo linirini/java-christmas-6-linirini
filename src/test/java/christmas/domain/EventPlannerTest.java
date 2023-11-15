@@ -2,6 +2,7 @@ package christmas.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import christmas.domain.event.Gift;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,7 +10,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class EventPlannerTest {
 
-    private final static int MINIMUM = 10000;
+    private final static int MINIMUM_ORDER_AMOUNT = 10000;
+    private final static int MINIMUM_GIFT_AMOUNT = 120000;
 
     private EventPlanner eventPlanner;
 
@@ -25,8 +27,22 @@ class EventPlannerTest {
         assertThat(eventPlanner.isMinimumAmountForEventMet(amount)).isEqualTo(expected(amount));
     }
 
+    @DisplayName("총주문 금액을 기준으로 증정품을 준다.")
+    @ParameterizedTest
+    @ValueSource(ints = {125000, 10000})
+    void 증정품_수여(int amount) {
+        assertThat(Gift.receiveGift(amount)).isEqualTo(expectedGift(amount));
+    }
+
     private boolean expected(int amount) {
-        return amount >= MINIMUM;
+        return amount >= MINIMUM_ORDER_AMOUNT;
+    }
+
+    private Gift expectedGift(int amount) {
+        if (amount >= MINIMUM_GIFT_AMOUNT) {
+            return Gift.GIFT;
+        }
+        return Gift.NO_GIFT;
     }
 
 }
