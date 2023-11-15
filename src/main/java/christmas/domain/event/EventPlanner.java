@@ -28,4 +28,8 @@ public class EventPlanner {
                 gift.getGiftBenefit());
     }
 
+    public int calculateExpectedPayAmount(int totalAmountBeforeDiscount, int discountAmount) {
+        return totalAmountBeforeDiscount - discountAmount;
+    }
+
 }
