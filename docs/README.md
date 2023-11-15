@@ -45,7 +45,7 @@
 - [x] 이벤트 배지 부여
   - [x] Enum으로 관리 - Badge
     - [x] 총 혜택 금액에 따라 이벤트 배지 다르게 부여 - Badge#determineBadge
-    - [ ] 총 혜택 금액 계산하기 - Event#getTotalEventPrice
+    - [x] 총 혜택 금액 계산하기 - Event#getTotalEventPrice
         - 5천원 이상 : 별
         - 1만원 이상 : 트리
         - 2만원 이상 : 산타
@@ -77,7 +77,7 @@
 - [x] 증정 메뉴 출력 - OutputView#printGiftMenu
   - [x] "<증정 메뉴>"
   - [x] 증정 이벤트에 해당하지 않는 경우 "없음" 출력
-- [ ] 혜택 내역 출력 - OutputView#printBenefitDetails
+- [x] 혜택 내역 출력 - OutputView#printBenefitDetails
   - [x] "<혜택 내역>"
   - [x] "이벤트명: -0,000원" 형식으로 순서는 자유롭게 출력
     - [x] 크리스마스 할인은 "크리스마스 디데이 할인: " 형식으로 출력 - OutputView#printChristmasDdayDiscountBenefit
@@ -85,17 +85,17 @@
     - [x] 특별 할인은 "특별 할인: " 형식으로 출력 - OutputView#printWeekendDiscountBenefit
     - [x] 증정 이벤트는 "증정 이벤트: " 형식으로 출력 - OutputView#printGiftBenefit
   - [x] 고객에게 적용된 이벤트 내역만 출력
-  - [ ] 혜택 내역 없을 경우 "없음" 출력
-- [ ] 총 혜택 금액 출력 - OutputView#printBenefitPrice
+  - [x] 혜택 내역 없을 경우 "없음" 출력
+- [x] 총 혜택 금액 출력 - OutputView#printBenefitPrice
   - [x] "<총혜택 금액>"
   - [x] "-00,000원" 형식으로 출력
   - [x] 총혜택 금액 = 할인 금액 합게 + 증정 메뉴 가격 EventBenefit#getTotalEventBenefit
   - [x] 혜택 금액 없을 경우 : 0원
-- [ ] 할인 후 예상 결제 금액 출력 - OutputView#printExpectedPayAmount
+- [x] 할인 후 예상 결제 금액 출력 - OutputView#printExpectedPayAmount
   - [x] "<할인 후 예상 결졔 금액>"
   - [x] "0,000원" 형식으로 출력
   - [x] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액
-- [ ] 이벤트 배지 출력 - OutputView#printEventBadge
+- [x] 이벤트 배지 출력 - OutputView#printEventBadge
   - [x] "<12월 이벤트 배지>"
   - [x] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력
   - [x] 이벤트 배지 없을 경우 "없음" 출력

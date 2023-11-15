@@ -11,10 +11,13 @@ import static christmas.view.viewenum.OutputEnum.MONEY_UNIT;
 import static christmas.view.viewenum.OutputEnum.NONE;
 import static christmas.view.viewenum.OutputEnum.ORDER_AMOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.ORDER_MENU_OUTPUT;
+import static christmas.view.viewenum.OutputEnum.SPECIAL_DISCOUNT;
 import static christmas.view.viewenum.OutputEnum.TOTAL_BENEFIT_AMOUNT;
 import static christmas.view.viewenum.OutputEnum.WEEKEND_DISCOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.WEEK_DISCOUNT_OUTPUT;
 
+import christmas.domain.event.EventBenefit;
+import christmas.domain.event.Gift;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -22,85 +25,98 @@ public class OutputView {
 
     public void printOrderedMenus(HashMap<String, Integer> menus) {
         System.out.println(ORDER_MENU_OUTPUT.getMessage());
-        printMenus(menus);
-    }
-
-    public void printOrdersAmount(int amount) {
-        System.out.println(ORDER_AMOUNT_OUTPUT.getMessage());
-        System.out.println(String.format("%,d", amount) + MONEY_UNIT.getMessage());
-    }
-
-    public void printGiftMenu(HashMap<String, Integer> gift) {
-        System.out.println(GIFT_MENU_OUTPUT.getMessage());
-        if (gift.isEmpty()) {
-            printNone();
-            return;
-        }
-        printMenus(gift);
-    }
-
-    private void printMenus(HashMap<String, Integer> menus) {
         for (Entry<String, Integer> entry : menus.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue() + COUNT_UNIT.getMessage());
         }
     }
 
-    public void printBenefitDetails() {
+    public void printOrdersAmount(int amount) {
+        System.out.println(ORDER_AMOUNT_OUTPUT.getMessage());
+        printAmount(amount);
+    }
+
+    public void printGiftMenu(Gift gift) {
+        System.out.println(GIFT_MENU_OUTPUT.getMessage());
+        if (gift == Gift.NO_GIFT) {
+            System.out.println(gift.getGiftName());
+        }
+        System.out.println(gift.getGiftName() + " " + gift.getCount() + COUNT_UNIT.getMessage());
+    }
+
+    public void printNoneBenefit(EventBenefit eventBenefit) {
         System.out.println(BENEFIT_DETAIL_OUTPUT.getMessage());
+        System.out.println(NONE.getMessage());
     }
 
-    public void printChristmasDdayDiscountBenefit(int amount) {
+    public void printBenefitDetails(EventBenefit eventBenefit) {
+        System.out.println(BENEFIT_DETAIL_OUTPUT.getMessage());
+        printChristmasDdayDiscountBenefit(eventBenefit.getChristmasDdayBenefit());
+        printWeekDiscountBenefit(eventBenefit.getWeekBenefit());
+        printWeekendDiscountBenefit(eventBenefit.getWeekendBenefit());
+        printSpecialDiscountBenefit(eventBenefit.getSpecialBenefit());
+        printGiftBenefit(eventBenefit.getGiftBenefit());
+    }
+
+    private void printChristmasDdayDiscountBenefit(int amount) {
         if (amount != 0) {
-            System.out.println(
-                    CHRISTMAS_D_DAY_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                            + MONEY_UNIT.getMessage());
+            System.out.print(CHRISTMAS_D_DAY_DISCOUNT_OUTPUT.getMessage());
+            printBenefitAmount(amount);
         }
     }
 
-    public void printWeekDiscountBenefit(int amount) {
+    private void printWeekDiscountBenefit(int amount) {
         if (amount != 0) {
-            System.out.println(WEEK_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                    + MONEY_UNIT.getMessage());
+            System.out.print(WEEK_DISCOUNT_OUTPUT.getMessage());
+            printBenefitAmount(amount);
         }
     }
 
-    public void printWeekendDiscountBenefit(int amount) {
+    private void printWeekendDiscountBenefit(int amount) {
         if (amount != 0) {
-            System.out.println(WEEKEND_DISCOUNT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                    + MONEY_UNIT.getMessage());
+            System.out.print(WEEKEND_DISCOUNT_OUTPUT.getMessage());
+            printBenefitAmount(amount);
         }
     }
 
-    public void printGiftBenefit(int amount) {
+    private void printSpecialDiscountBenefit(int amount) {
         if (amount != 0) {
-            System.out.println(GIFT_BENEFIT_OUTPUT.getMessage() + String.format("-%,d", amount)
-                    + MONEY_UNIT.getMessage());
+            System.out.print(SPECIAL_DISCOUNT.getMessage());
+            printBenefitAmount(amount);
         }
     }
 
-    public void printTotalBenefitAmount(int amount) {
+    private void printGiftBenefit(int amount) {
+        if (amount != 0) {
+            System.out.print(GIFT_BENEFIT_OUTPUT.getMessage());
+            printBenefitAmount(amount);
+        }
+    }
+
+    private void printTotalBenefitAmount(int amount) {
         System.out.println(TOTAL_BENEFIT_AMOUNT.getMessage());
         if (amount == 0) {
-            System.out.println(amount + MONEY_UNIT.getMessage());
+            printAmount(amount);
             return;
         }
-        System.out.println(String.format("-%,d", amount)
-                + MONEY_UNIT.getMessage());
+        printBenefitAmount(amount);
+    }
+
+    private void printBenefitAmount(int amount) {
+        System.out.println(String.format("-%,d", amount) + MONEY_UNIT.getMessage());
     }
 
     public void printExpectedPayAmount(int amount) {
         System.out.println(EXPECTED_PAY_AMOUNT.getMessage());
-        System.out.println(String.format("%,d", amount)
-                + MONEY_UNIT.getMessage());
+        printAmount(amount);
     }
 
-    public void printEventBadge(String viewName){
+    private void printAmount(int amount) {
+        System.out.println(String.format("%,d", amount) + MONEY_UNIT.getMessage());
+    }
+
+    public void printEventBadge(String viewName) {
         System.out.println(EVENT_BADGE.getMessage());
         System.out.println(viewName);
-    }
-
-    public void printNone() {
-        System.out.println(NONE.getMessage());
     }
 
 }

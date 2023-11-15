@@ -33,4 +33,11 @@ public enum Gift {
         return menuOption.getPrice() * count;
     }
 
+    public String getGiftName() {
+        return menuOption.getViewName();
+    }
+
+    public int getCount() {
+        return count;
+    }
 }
