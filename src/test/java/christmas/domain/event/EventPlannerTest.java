@@ -3,10 +3,7 @@ package christmas.domain.event;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-import christmas.domain.event.EventPlanner;
 import christmas.domain.Orders;
-import christmas.domain.event.EventBenefit;
-import christmas.domain.event.Gift;
 import christmas.domain.menu.MenuOption;
 import java.util.HashMap;
 import org.junit.jupiter.api.BeforeEach;
@@ -61,6 +58,13 @@ class EventPlannerTest {
                 () -> assertThat(eventBenefit.getSpecialBenefit()).isEqualTo(1000),
                 () -> assertThat(eventBenefit.getGiftBenefit()).isZero()
         );
+    }
+
+    @DisplayName("할인 후 예상 결제 금액을 계산한다..")
+    @Test
+    void 할인_후_결제_예상_금액() {
+        assertThat(eventPlanner.calculateExpectedPayAmount(142000, 6246)).isEqualTo(
+                135754);
     }
 
     private boolean expected(int amount) {
