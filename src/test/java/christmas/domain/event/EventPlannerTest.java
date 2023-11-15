@@ -60,13 +60,6 @@ class EventPlannerTest {
         );
     }
 
-    @DisplayName("할인 후 예상 결제 금액을 계산한다..")
-    @Test
-    void 할인_후_결제_예상_금액() {
-        assertThat(eventPlanner.calculateExpectedPayAmount(142000, 6246)).isEqualTo(
-                135754);
-    }
-
     private boolean expected(int amount) {
         return amount >= MINIMUM_ORDER_AMOUNT;
     }

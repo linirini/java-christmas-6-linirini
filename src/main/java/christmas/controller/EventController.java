@@ -28,7 +28,7 @@ public class EventController {
         EventBenefit eventBenefit = getEventBenefitAndPrintDetails(date, orders, gift);
         int benefitAmount = getTotalBenefitAmountAndPrint(eventBenefit);
         int discountAmount = eventBenefit.getTotalDiscountAmount();
-        calculateExpectedPayAmountAndPrint(totalAmountBeforeDiscount,discountAmount);
+        calculateExpectedPayAmountAndPrint(totalAmountBeforeDiscount, discountAmount);
         getEventBadgeAndPrint(benefitAmount);
     }
 
@@ -95,8 +95,7 @@ public class EventController {
     private void calculateExpectedPayAmountAndPrint(int totalAmountBeforeDiscount,
             int discountAmount) {
         outputView.printLineBreak();
-        int payAmount = eventPlanner.calculateExpectedPayAmount(totalAmountBeforeDiscount,
-                discountAmount);
+        int payAmount = totalAmountBeforeDiscount - discountAmount;
         outputView.printExpectedPayAmount(payAmount);
     }
 

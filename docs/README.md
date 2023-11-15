@@ -96,7 +96,7 @@
 - [x] 할인 후 예상 결제 금액 출력 - OutputView#printExpectedPayAmount
   - [x] "<할인 후 예상 결졔 금액>"
   - [x] "0,000원" 형식으로 출력
-  - [x] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액 - EventBenefit#calculateExpectedPayAmount
+  - [x] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액
 - [x] 이벤트 배지 출력 - OutputView#printEventBadge
   - [x] "<12월 이벤트 배지>"
   - [x] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력
