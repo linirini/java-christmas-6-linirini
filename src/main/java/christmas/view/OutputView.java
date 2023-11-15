@@ -3,6 +3,7 @@ package christmas.view;
 import static christmas.view.viewenum.OutputEnum.BENEFIT_DETAIL_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.COUNT_UNIT;
+import static christmas.view.viewenum.OutputEnum.EXPECTED_PAY_AMOUNT;
 import static christmas.view.viewenum.OutputEnum.GIFT_BENEFIT_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.GIFT_MENU_OUTPUT;
 import static christmas.view.viewenum.OutputEnum.MONEY_UNIT;
@@ -83,6 +84,12 @@ public class OutputView {
             return;
         }
         System.out.println(String.format("-%,d", amount)
+                + MONEY_UNIT.getMessage());
+    }
+
+    public void printExpectedPayAmount(int amount) {
+        System.out.println(EXPECTED_PAY_AMOUNT.getMessage());
+        System.out.println(String.format("%,d", amount)
                 + MONEY_UNIT.getMessage());
     }
 

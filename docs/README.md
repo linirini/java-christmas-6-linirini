@@ -91,8 +91,9 @@
   - [x] "-00,000원" 형식으로 출력
   - [ ] 총혜택 금액 = 할인 금액 합게 + 증정 메뉴 가격
   - [x] 혜택 금액 없을 경우 : 0원
-- [ ] 할인 후 예상 결제 금액 출력 - OutputView#printExpectedPaymentAmount
-  - [ ] "<할인 후 예상 결졔 금액>"
+- [ ] 할인 후 예상 결제 금액 출력 - OutputView#printExpectedPayAmount
+  - [x] "<할인 후 예상 결졔 금액>"
+  - [x] "0,000원" 형식으로 출력
   - [ ] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액
 - [ ] 이벤트 배지 출력 - OutputView#printEventBadge
   - [ ] "<12월 이벤트 배지>"
