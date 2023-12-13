@@ -14,12 +14,12 @@
 <음료>
 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
 ```
-- [ ] 달력 - CalenderEnum
+- [ ] 달력 - Calender#DECEMBER
 - [ ] 중복 할인 및 증정 적용 - EventPlanner
 - [ ] 크리스마스 디데이 할인 - ChristmasDdayDiscount#discount
   - [ ] 2023.12.1 ~ 2023.12.25 - Calender#isDdayEventTerm
   - [ ] 초기 값 1000원, 매일 100원씩 증가 - ChristmasDdayDiscount#discount
-  - [ ] 총주문 금액 - 해당 금액 - EventPlanner
+  - [ ] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액 - EventPlanner
 - [ ] 평일/주말 할인 - WeekAndWeekendDiscount#discount
   - [ ] 주말인지, 평일인지 판단한다. - Calender#isWeekend
   - [ ] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
@@ -36,9 +36,9 @@
     - [ ] 1만원 이상 : 트리
     - [ ] 2만원 이상 : 산타
 - [ ] 예외 처리
-  - [ ] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOptions, count)#getTotalPrice
+  - [ ] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOption, count)#getTotalPrice
   - [ ] 음료만 주문 불가 - MenuOptionEnum#isGroupOf
-  - [ ] 한번에 메뉴 최대 20개 주문 가능 - Orders#getTotalCount
+  - [ ] 한번에 메뉴 최대 20개 주문 가능 - Orders#getOrdersCount
 - [ ] 예약 안내 문구 출력
   - [ ] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." 출력 - OutputVeiw#printReservationNotice
 - [ ] 예상 방문 날짜 입력
@@ -57,8 +57,8 @@
 - [ ] 혜택 미리 보기 안내 문구 출력
     - [ ] "12월 n일에 우테코 식당에서 받을 이벤트 미리 보기!" 출력 - OutputView#printBenefitsNotice
 - [ ] 주문 메뉴 출력
-  - [ ] "<주문 메뉴>" 출력 - OutputView#printOrderMenus
-  - [ ] "메뉴명 n개" 형식으로 출력 - OutputView#printOrderMenus
+  - [ ] "<주문 메뉴>" 출력 - OutputView#printOrders
+  - [ ] "메뉴명 n개" 형식으로 출력 - OutputView#printOrders
   - [ ] 주문 메뉴 출력 순서는 자율
 - [ ] 총주문 금액 출력
   - [ ] "<할인 전 총주문 금액>" 출력 - OutputView#printTotalOrdersPrice
@@ -83,4 +83,4 @@
 - [ ] 이벤트 배지 출력
   - [ ] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
   - [ ] 해당 X : "없음" 출력 - OutputView#printEventBadge
-  - [ ] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력
+  - [ ] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력 - BadgeEnum#getBadgeByBenefitAmount
