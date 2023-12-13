@@ -1,6 +1,7 @@
 package christmas.view;
 
 import static christmas.domain.Gift.NONE;
+import static christmas.view.OutputEnum.ACTUAL_PAYMENT_PRICE_TITLE;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_PREFIX;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_SUFFIX;
 import static christmas.view.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT;
@@ -88,17 +89,17 @@ public class OutputView {
         }
     }
 
-    public void printTotalBenefitsPrice(int amount) {
+    public void printTotalBenefitsPrice(Benefit benefit) {
         System.out.println(TOTAL_BENEFITS_PRICE_TITLE);
-        System.out.println(formatBenefit(amount)+MONEY_UNIT);
+        System.out.println(formatBenefit(benefit.getTotalBenefitsPrice())+MONEY_UNIT);
     }
 
     public void printActualPaymentPrice(int amount) {
-
+        System.out.println(ACTUAL_PAYMENT_PRICE_TITLE);
+        System.out.println(formatPrice(amount)+MONEY_UNIT);
     }
 
     public void printEventBadge(Badge badge) {
-
     }
 
     private String formatPrice(int amount) {
