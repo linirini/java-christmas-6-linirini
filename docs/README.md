@@ -1,6 +1,6 @@
 # 🚀 기능 명세서
 
-- [ ] 메뉴 - MenuOptionEnum, MenuGroupEnum
+- [x] 메뉴 - MenuOptionEnum, MenuGroupEnum
   - [ ] menuOption으로 menuGroup을 찾는다.
 ```
 <애피타이저>
