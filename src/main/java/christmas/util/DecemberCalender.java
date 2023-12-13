@@ -34,7 +34,7 @@ public enum DecemberCalender {
     }
 
     public static boolean isStarDate(int date) {
-        return false;
+        return DECEMBER.star.contains(date);
     }
 
     public static boolean isEventTerm(int date) {
