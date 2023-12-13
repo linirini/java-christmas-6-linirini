@@ -18,7 +18,16 @@ public enum Gift {
         this.minimumOrderPrice = minimumOrderPrice;
     }
 
+    public MenuOption getMenu() {
+        return menu;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
     public boolean receiveGift(int amount) {
         return amount >= this.minimumOrderPrice;
     }
+
 }

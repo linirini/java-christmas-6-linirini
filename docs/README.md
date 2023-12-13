@@ -33,7 +33,7 @@
   - [x] 1000원 할인 - SpecialDiscount#discount
   - [ ] 총주문 금액 - 1000원
 - [ ] 증정 이벤트 - GiftEvent
-  - [ ] 총주문 금액 >= 12만원 , 샴페인 1개(25000원) 증정 - GiftEvent#receiveGift
+  - [x] 총주문 금액 >= 12만원 , 샴페인 1개(25000원) 증정 - GiftEvent#receiveGift
 - [x] 크리스마스 디데이 할인 외 12.1~12.31 적용 - Calender#isEventTerm
 - [ ] 이벤트 배지 부여 - BadgeEnum
   - [ ] 총혜택 금액에 따라 : 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴 가격 - EventPlanner#getTotalBenefitPrice
