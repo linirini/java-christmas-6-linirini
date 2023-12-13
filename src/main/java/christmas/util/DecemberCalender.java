@@ -18,7 +18,7 @@ public enum DecemberCalender {
     }
 
     public static boolean isDdayEventTerm(int date){
-        return false;
+        return date<=CHRISTMAS;
     }
 
     public static boolean isWeekend(int date){
