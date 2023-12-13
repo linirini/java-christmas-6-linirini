@@ -88,8 +88,8 @@
   - [ ] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액 - EventPlanner#getActualPaymentPrice
   - [x] 할인 금액 계산 - Benefits#getDiscountPrice
 - [ ] 이벤트 배지 출력
-  - [ ] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
-  - [ ] 해당 X : "없음" 출력 - OutputView#printEventBadge
+  - [x] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
+  - [x] 해당 X : "없음" 출력 - OutputView#printEventBadge
   - [x] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력 - BadgeEnum#getBadgeByBenefitAmount
 
 # ✔️리팩터링

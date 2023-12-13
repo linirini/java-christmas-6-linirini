@@ -1,6 +1,5 @@
 package christmas.view;
 
-import static christmas.domain.Gift.NONE;
 import static christmas.view.OutputEnum.ACTUAL_PAYMENT_PRICE_TITLE;
 import static christmas.view.OutputEnum.BADGE_TITLE;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_PREFIX;
@@ -10,6 +9,7 @@ import static christmas.view.OutputEnum.COUNT_UNIT;
 import static christmas.view.OutputEnum.GIFT_EVENT;
 import static christmas.view.OutputEnum.GIFT_TITLE;
 import static christmas.view.OutputEnum.MONEY_UNIT;
+import static christmas.view.OutputEnum.NONE;
 import static christmas.view.OutputEnum.ORDERS_TITLE;
 import static christmas.view.OutputEnum.SPECIAL_DISCOUNT;
 import static christmas.view.OutputEnum.TOTAL_BENEFITS_PRICE_TITLE;
@@ -100,11 +100,6 @@ public class OutputView {
         System.out.println(formatPrice(amount)+MONEY_UNIT);
     }
 
-    public void printEventBadge(Badge badge) {
-        System.out.println(BADGE_TITLE);
-        System.out.println(badge.name());
-    }
-
     private String formatPrice(int amount) {
         DecimalFormat df = new DecimalFormat("###,###");
         return df.format(amount);
@@ -113,6 +108,13 @@ public class OutputView {
     private String formatBenefit(int amount) {
         DecimalFormat df = new DecimalFormat("-###,###");
         return df.format(amount);
+    }
+
+    public void printEventBadge(Badge badge) {
+        System.out.println(BADGE_TITLE);
+        if(badge== Badge.NONE){
+            System.out.println(NONE);
+        }
     }
 
 }
