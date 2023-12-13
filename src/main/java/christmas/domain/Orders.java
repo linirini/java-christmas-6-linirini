@@ -1,7 +1,10 @@
 package christmas.domain;
 
+import static christmas.domain.menu.MenuGroup.MAIN_DISH;
+
 import christmas.domain.menu.MenuOption;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class Orders {
 
@@ -24,7 +27,13 @@ public class Orders {
     }
 
     public int getMainMenusCount() {
-        return -1;
+        int count = 0;
+        for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
+            if(entry.getKey().isGroupOf()==MAIN_DISH){
+                count+=entry.getValue();
+            }
+        }
+        return count;
     }
 
     public int getDessertMenusCount() {

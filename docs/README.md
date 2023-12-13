@@ -1,8 +1,8 @@
 # 🚀 기능 명세서
 
 - [x] 메뉴 - MenuOptionEnum, MenuGroupEnum
-  - [ ] menuOption으로 menuGroup을 찾는다. - MenuGroup#findMenuGroup
-  - [ ] menuOption의 menuGroup을 반환한다. - MenuOption#isGroupOf
+  - [x] menuOption으로 menuGroup을 찾는다. - MenuGroup#findMenuGroup
+  - [x] menuOption의 menuGroup을 반환한다. - MenuOption#isGroupOf
 ```
 <애피타이저>
 양송이수프(6,000), 타파스(5,500), 시저샐러드(8,000)
