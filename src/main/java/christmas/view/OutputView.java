@@ -1,8 +1,10 @@
 package christmas.view;
 
+import static christmas.domain.Gift.NONE;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_PREFIX;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_SUFFIX;
 import static christmas.view.OutputEnum.COUNT_UNIT;
+import static christmas.view.OutputEnum.GIFT_TITLE;
 import static christmas.view.OutputEnum.MONEY_UNIT;
 import static christmas.view.OutputEnum.ORDERS_TITLE;
 import static christmas.view.OutputEnum.TOTAL_ORDERS_PRICE_TITLE;
@@ -33,7 +35,12 @@ public class OutputView {
     }
 
     public void printGiftMenu(Gift gift) {
-
+        System.out.println(GIFT_TITLE.getMessage());
+        if (gift == Gift.NONE) {
+            System.out.println(NONE);
+            return;
+        }
+        System.out.println(gift.menu.getName() + ' ' + gift.count + COUNT_UNIT);
     }
 
     public void printBenefits() {
