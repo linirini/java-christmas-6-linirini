@@ -6,6 +6,7 @@ import static christmas.view.OutputEnum.BENEFITS_NOTICE_PREFIX;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_SUFFIX;
 import static christmas.view.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT;
 import static christmas.view.OutputEnum.COUNT_UNIT;
+import static christmas.view.OutputEnum.EVENT_INTRODUCTION;
 import static christmas.view.OutputEnum.GIFT_EVENT;
 import static christmas.view.OutputEnum.GIFT_TITLE;
 import static christmas.view.OutputEnum.MONEY_UNIT;
@@ -26,6 +27,10 @@ import java.text.DecimalFormat;
 import java.util.Map.Entry;
 
 public class OutputView {
+
+    public void printEventIntroduction(){
+        System.out.println(EVENT_INTRODUCTION);
+    }
 
     public void printBenefitsNotice(int date) {
         System.out.println(BENEFITS_NOTICE_PREFIX.getMessage() + date + BENEFITS_NOTICE_SUFFIX);
@@ -61,7 +66,7 @@ public class OutputView {
         printWeekDiscountBenefit(benefit.getWeekDiscountBenefit());
         printWeekendDiscountBenefit(benefit.getWeekendDiscountBenefit());
         printSpecialDiscountBenefit(benefit.getSpecialDiscountBenefit());
-        printGiftEventBenefit(benefit.getGiftEventBenefit());
+        printGiftEventBenefit(benefit.getGiftEventBenefitPrice());
     }
 
     private void printChristmasDdayDiscountBenefit(int amount) {
@@ -90,9 +95,9 @@ public class OutputView {
         }
     }
 
-    public void printTotalBenefitsPrice(Benefit benefit) {
+    public void printTotalBenefitsPrice(int amount) {
         System.out.println(TOTAL_BENEFITS_PRICE_TITLE);
-        System.out.println(formatBenefit(benefit.getTotalBenefitsPrice())+MONEY_UNIT);
+        System.out.println(formatBenefit(amount)+MONEY_UNIT);
     }
 
     public void printActualPaymentPrice(int amount) {
@@ -115,6 +120,10 @@ public class OutputView {
         if(badge== Badge.NONE){
             System.out.println(NONE);
         }
+    }
+
+    public void printErrorMessage(String message) {
+        System.out.println(message);
     }
 
 }

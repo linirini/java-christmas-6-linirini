@@ -18,76 +18,76 @@
 ```
 - [x] 달력 - Calender#DECEMBER
 - [x] 중복 할인 및 증정 적용 - Benefit
-- [ ] 크리스마스 디데이 할인 - ChristmasDdayDiscount#discount
+- [x] 크리스마스 디데이 할인 - ChristmasDdayDiscount#discount
   - [x] 2023.12.1 ~ 2023.12.25 - Calender#isDdayEventTerm
   - [x] 초기 값 1000원, 매일 100원씩 증가 - ChristmasDdayDiscount#discount
   - [x] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액
-- [ ] 평일/주말 할인 - WeekAndWeekendDiscount#discount
+- [x] 평일/주말 할인 - WeekAndWeekendDiscount#discount
   - [x] 주말인지, 평일인지 판단한다. - Calender#isWeekend
   - [x] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#weekDiscount
     - [x] 디저트 메뉴 개수 가져오기 - Orders#getDessertMenusCount
   - [x] 주말(금~토) : 메인 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#weekendDiscount
     - [x] 메인 메뉴 가져오기 - Orders#getMainMenusCount
-- [ ] 특별 할인 - SpecialDiscount#discount
+- [x] 특별 할인 - SpecialDiscount#discount
   - [x] 3, 10, 17, 24, 25, 31일 - Calender#isStarDate
   - [x] 1000원 할인 - SpecialDiscount#discount
   - [x] 총주문 금액 - 1000원
-- [ ] 증정 이벤트 - GiftEvent
+- [x] 증정 이벤트 - GiftEvent
   - [x] 총주문 금액 >= 12만원 , 샴페인 1개(25000원) 증정 - GiftEvent#receiveGift
 - [x] 크리스마스 디데이 할인 외 12.1~12.31 적용 - Calender#isEventTerm
-- [ ] 이벤트 배지 부여 - BadgeEnum
-  - [ ] 총혜택 금액에 따라 : 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴 가격 - Benefit#getTotalBenefitPrice
+- [x] 이벤트 배지 부여 - BadgeEnum
+  - [x] 총혜택 금액에 따라 : 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴 가격 - Benefit#getTotalBenefitPrice
     - [x] 5천원 이상 : 별
     - [x] 1만원 이상 : 트리
     - [x] 2만원 이상 : 산타
-- [ ] 예외 처리
-  - [ ] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOption, count)#getTotalPrice, EventPlanner
+- [x] 예외 처리
+  - [x] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOption, count)#getTotalPrice, EventPlanner
   - [x] 음료만 주문 불가 - MenuOptionEnum#isGroupOf
   - [x] 한번에 메뉴 최대 20개 주문 가능 - Orders#getOrdersCount
 - [x] 예약 안내 문구 출력
   - [x] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." 출력 - OutputVeiw#printEventIntroduction
-- [ ] 예상 방문 날짜 입력
+- [x] 예상 방문 날짜 입력
   - [x] "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)" 출력  - InputView#inputReservationDate
-  - [ ] "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 예외 출력 - ExceptionEnum
+  - [x] "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 예외 출력 - ExceptionEnum
     - [x] 1이상 31이하가 아닌 경우 - Calender#isExistingDate
-    - [ ] 숫자가 아닌 경우 
-- [ ] 주문 메뉴와 개수 입력
+    - [x] 숫자가 아닌 경우 
+- [x] 주문 메뉴와 개수 입력
     - [x] "주문하실 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)" 출력 - InputView#inputOrders
       - [x] "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요." 예외 처리
         - [x] 없는 메뉴를 입력하는 경우 - Orders#validate
         - [x] 메뉴 개수를 1 미만을 입력하는 경우 - Orders#validate
-        - [ ] 메뉴 개수가 숫자가 아닌 경우
-        - [ ] 주어진 형식과 다른 경우
-        - [ ] 중복 메뉴를 입력하는 경우(e.g. 시저샐러드-1,시저샐러드-1) 
+        - [x] 메뉴 개수가 숫자가 아닌 경우
+        - [x] 주어진 형식과 다른 경우
+        - [x] 중복 메뉴를 입력하는 경우(e.g. 시저샐러드-1,시저샐러드-1) 
 - [x] 혜택 미리 보기 안내 문구 출력
     - [x] "12월 n일에 우테코 식당에서 받을 이벤트 미리 보기!" 출력 - OutputView#printBenefitsNotice
 - [x] 주문 메뉴 출력
   - [x] "<주문 메뉴>" 출력 - OutputView#printOrders
   - [x] "메뉴명 n개" 형식으로 출력 - OutputView#printOrders
   - [x] 주문 메뉴 출력 순서는 자율
-- [ ] 총주문 금액 출력
+- [x] 총주문 금액 출력
   - [x] "<할인 전 총주문 금액>" 출력 - OutputView#printTotalOrdersPrice
   - [x] "0,000원" 형태로 출력 - OutputView#printTotalOrdersPrice
-- [ ] 증정 메뉴 출력
+- [x] 증정 메뉴 출력
   - [x] "<증정 메뉴>" 출력 - OutputView#printGiftMenu
   - [x] "메뉴명 n개" 형태로 출력 - OutputView#printGiftMenu
   - [x] 해당 X : "없음" 출력 - OutputView#printGiftMenu
-- [ ] 혜택 내역 출력
+- [x] 혜택 내역 출력
   - [x] "<혜택 내역>" 출력 - OutputView#printBenefits
   - [x] "할인명: -0,000원" 형태로 출력 - OutputView#printBenefits
   - [x] 적용 이벤트 내역만 출력 
   - [x] 해당 X : "없음" 출력
   - [x] 해택 내역 출력 순서는 자율
-- [ ] 총혜택 금액 출력
+- [x] 총혜택 금액 출력
   - [x] 총혜택 금액 = 할인 금액 + 증정 메뉴 금액 - Benefit#getTotalBenefitsPrice
   - [x] "<총혜택 금액>" 출력 - OutputView#printTotalBenefitsPrice
   - [x] "-0,000원" 형태로 출력 - OutputView#printTotalBenefitsPrice
-- [ ] 할인 후 예상 결제 금액 출력
+- [x] 할인 후 예상 결제 금액 출력
   - [x] "<할인 후 예상 결제 금액>" 출력 - OutputView#printActualPaymentPrice
   - [x] "0,000원" 형태로 출력 - OutputView#printActualPaymentPrice
   - [x] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액 - EventPlanner#getActualPaymentPrice
   - [x] 할인 금액 계산 - Benefits#getDiscountPrice
-- [ ] 이벤트 배지 출력
+- [x] 이벤트 배지 출력
   - [x] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
   - [x] 해당 X : "없음" 출력 - OutputView#printEventBadge
   - [x] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력 - BadgeEnum#getBadgeByBenefitAmount
