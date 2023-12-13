@@ -2,6 +2,7 @@ package christmas.view;
 
 import static christmas.domain.Gift.NONE;
 import static christmas.view.OutputEnum.ACTUAL_PAYMENT_PRICE_TITLE;
+import static christmas.view.OutputEnum.BADGE_TITLE;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_PREFIX;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_SUFFIX;
 import static christmas.view.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT;
@@ -100,6 +101,8 @@ public class OutputView {
     }
 
     public void printEventBadge(Badge badge) {
+        System.out.println(BADGE_TITLE);
+        System.out.println(badge.name());
     }
 
     private String formatPrice(int amount) {
