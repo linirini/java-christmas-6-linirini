@@ -59,12 +59,12 @@
         - [ ] 메뉴 개수가 숫자가 아닌 경우
         - [ ] 주어진 형식과 다른 경우
         - [ ] 중복 메뉴를 입력하는 경우(e.g. 시저샐러드-1,시저샐러드-1) - Orders#validate
-- [ ] 혜택 미리 보기 안내 문구 출력
-    - [ ] "12월 n일에 우테코 식당에서 받을 이벤트 미리 보기!" 출력 - OutputView#printBenefitsNotice
-- [ ] 주문 메뉴 출력
-  - [ ] "<주문 메뉴>" 출력 - OutputView#printOrders
-  - [ ] "메뉴명 n개" 형식으로 출력 - OutputView#printOrders
-  - [ ] 주문 메뉴 출력 순서는 자율
+- [x] 혜택 미리 보기 안내 문구 출력
+    - [x] "12월 n일에 우테코 식당에서 받을 이벤트 미리 보기!" 출력 - OutputView#printBenefitsNotice
+- [x] 주문 메뉴 출력
+  - [x] "<주문 메뉴>" 출력 - OutputView#printOrders
+  - [x] "메뉴명 n개" 형식으로 출력 - OutputView#printOrders
+  - [x] 주문 메뉴 출력 순서는 자율
 - [ ] 총주문 금액 출력
   - [ ] "<할인 전 총주문 금액>" 출력 - OutputView#printTotalOrdersPrice
   - [ ] "0,000원" 형태로 출력 - OutputView#printTotalOrdersPrice

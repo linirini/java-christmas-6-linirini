@@ -7,7 +7,9 @@ import static christmas.util.ExceptionEnum.ORDERS_COUNT_EXCESS;
 import static christmas.util.ExceptionEnum.ORDERS_ONLY_BEVERAGE;
 
 import christmas.domain.menu.MenuOption;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 public class Orders {
@@ -75,6 +77,10 @@ public class Orders {
             }
         }
         return count;
+    }
+
+    public Map<MenuOption, Integer> getOrders() {
+        return Collections.unmodifiableMap(orders);
     }
 
 }
