@@ -3,12 +3,15 @@ package christmas.view;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_PREFIX;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_SUFFIX;
 import static christmas.view.OutputEnum.COUNT_UNIT;
+import static christmas.view.OutputEnum.MONEY_UNIT;
 import static christmas.view.OutputEnum.ORDERS_TITLE;
+import static christmas.view.OutputEnum.TOTAL_ORDERS_PRICE_TITLE;
 
 import christmas.domain.Badge;
 import christmas.domain.Gift;
 import christmas.domain.Orders;
 import christmas.domain.menu.MenuOption;
+import java.text.DecimalFormat;
 import java.util.Map.Entry;
 
 public class OutputView {
@@ -25,7 +28,8 @@ public class OutputView {
     }
 
     public void printTotalOrdersPrice(int amount) {
-
+        System.out.println(TOTAL_ORDERS_PRICE_TITLE.getMessage());
+        System.out.println(formatMoney(amount) + MONEY_UNIT);
     }
 
     public void printGiftMenu(Gift gift) {
@@ -46,6 +50,11 @@ public class OutputView {
 
     public void printEventBadge(Badge badge) {
 
+    }
+
+    private String formatMoney(int amount) {
+        DecimalFormat df = new DecimalFormat("###,###");
+        return df.format(amount);
     }
 
 }
