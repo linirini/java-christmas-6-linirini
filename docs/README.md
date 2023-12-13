@@ -79,13 +79,14 @@
   - [ ] 해당 X : "없음" 출력
   - [ ] 해택 내역 출력 순서는 자율
 - [ ] 총혜택 금액 출력
-  - [ ] 총혜택 금액은 할인 금액 + 증정 메뉴 금액 - Benefit#getTotalBenefitsPrice
+  - [x] 총혜택 금액 = 할인 금액 + 증정 메뉴 금액 - Benefit#getTotalBenefitsPrice
   - [ ] "<총혜택 금액>" 출력 - OutputView#printTotalBenefitsPrice
   - [ ] "-0,000원" 형태로 출력 - OutputView#printTotalBenefitsPrice
 - [ ] 할인 후 예상 결제 금액 출력
   - [ ] "<할인 후 예상 결제 금액>" 출력 - OutputView#printActualPaymentPrice
   - [ ] "0,000원" 형태로 출력 - OutputView#printActualPaymentPrice
   - [ ] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액 - EventPlanner#getActualPaymentPrice
+  - [x] 할인 금액 계산 - Benefits#getDiscountPrice
 - [ ] 이벤트 배지 출력
   - [ ] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
   - [ ] 해당 X : "없음" 출력 - OutputView#printEventBadge

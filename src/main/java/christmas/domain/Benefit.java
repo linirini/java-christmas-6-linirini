@@ -18,9 +18,12 @@ public class Benefit {
     }
 
     public int getTotalBenefitsPrice() {
-        return christmasDdayDiscountBenefit + weekDiscountBenefit + weekendDiscountBenefit
-                + specialDiscountBenefit + giftEventBenefit;
+        return getTotalDiscountPrice() + giftEventBenefit;
     }
 
+    public int getTotalDiscountPrice(){
+        return christmasDdayDiscountBenefit + weekDiscountBenefit + weekendDiscountBenefit
+                + specialDiscountBenefit;
+    }
 
 }
