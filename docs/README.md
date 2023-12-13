@@ -1,6 +1,7 @@
 # 🚀 기능 명세서
 
 - [ ] 메뉴 - MenuOptionEnum, MenuGroupEnum
+  - [ ] menuOption으로 menuGroup을 찾는다.
 ```
 <애피타이저>
 양송이수프(6,000), 타파스(5,500), 시저샐러드(8,000)

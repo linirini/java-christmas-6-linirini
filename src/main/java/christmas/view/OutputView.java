@@ -1,5 +1,8 @@
 package christmas.view;
 
+import christmas.domain.Badge;
+import christmas.domain.Gift;
+
 public class OutputView {
 
     public void printBenefitsNotice(){
