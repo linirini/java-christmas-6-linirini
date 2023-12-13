@@ -1,5 +1,6 @@
 package christmas.domain;
 
+import static christmas.domain.menu.MenuGroup.DESSERT;
 import static christmas.domain.menu.MenuGroup.MAIN_DISH;
 
 import christmas.domain.menu.MenuOption;
@@ -18,26 +19,32 @@ public class Orders {
     private void validate(HashMap<MenuOption, Integer> orders) {
     }
 
-    public int getTotalPrice(){
+    public int getTotalPrice() {
         return -1;
     }
 
-    public int getOrdersCount(){
+    public int getOrdersCount() {
         return -1;
     }
 
     public int getMainMenusCount() {
         int count = 0;
         for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
-            if(entry.getKey().isGroupOf()==MAIN_DISH){
-                count+=entry.getValue();
+            if (entry.getKey().isGroupOf() == MAIN_DISH) {
+                count += entry.getValue();
             }
         }
         return count;
     }
 
     public int getDessertMenusCount() {
-        return -1;
+        int count = 0;
+        for (Entry<MenuOption, Integer> entry : orders.entrySet()) {
+            if (entry.getKey().isGroupOf() == DESSERT) {
+                count += entry.getValue();
+            }
+        }
+        return count;
     }
 
 }
