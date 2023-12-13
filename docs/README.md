@@ -14,22 +14,22 @@
 <음료>
 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
 ```
-- [ ] 달력 - Calender#DECEMBER
+- [x] 달력 - Calender#DECEMBER
 - [ ] 중복 할인 및 증정 적용 - EventPlanner
 - [ ] 크리스마스 디데이 할인 - ChristmasDdayDiscount#discount
-  - [ ] 2023.12.1 ~ 2023.12.25 - Calender#isDdayEventTerm
+  - [x] 2023.12.1 ~ 2023.12.25 - Calender#isDdayEventTerm
   - [ ] 초기 값 1000원, 매일 100원씩 증가 - ChristmasDdayDiscount#discount
   - [ ] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액 - EventPlanner
 - [ ] 평일/주말 할인 - WeekAndWeekendDiscount#discount
-  - [ ] 주말인지, 평일인지 판단한다. - Calender#isWeekend
+  - [x] 주말인지, 평일인지 판단한다. - Calender#isWeekend
   - [ ] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
   - [ ] 주말(금~토) : 메인 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
 - [ ] 특별 할인 - SpecialDiscount#discount
-  - [ ] 3, 10, 17, 24, 25, 31일 - Calender#isStarDate
+  - [x] 3, 10, 17, 24, 25, 31일 - Calender#isStarDate
   - [ ] 총주문 금액 - 1000원 - SpecialDiscount#discount
 - [ ] 증정 이벤트 - GiftEvent
   - [ ] 총주문 금액 >= 12만원 , 샴페인 1개(25000원) 증정 - GiftEvent#receiveGift
-- [ ] 크리스마스 디데이 할인 외 12.1~12.31 적용 - Calender#isEventTerm
+- [x] 크리스마스 디데이 할인 외 12.1~12.31 적용 - Calender#isEventTerm
 - [ ] 이벤트 배지 부여 - BadgeEnum
   - [ ] 총혜택 금액에 따라 : 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴 가격 - EventPlanner#getTotalBenefitPrice
     - [ ] 5천원 이상 : 별
@@ -44,7 +44,7 @@
 - [ ] 예상 방문 날짜 입력
   - [ ] "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)" 출력  - InputView#inputReservationDate
   - [ ] "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 예외 출력 - ExceptionEnum
-    - [ ] 1이상 31이하가 아닌 경우 - Calender#isValidDate
+    - [x] 1이상 31이하가 아닌 경우 - Calender#isExistingDate
     - [ ] 숫자가 아닌 경우 
 - [ ] 주문 메뉴와 개수 입력
     - [ ] "주문하실 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)" 출력 - InputView#inputOrders
@@ -87,5 +87,5 @@
 
 # ✔️리팩터링
 - [ ] 달력의 상수 정리 (12월에 대한 상수들임)
-  - [ ] 이벤트 종료 날짜
+  - [x] 이벤트 종료 날짜
   - [ ] 주말 날짜
