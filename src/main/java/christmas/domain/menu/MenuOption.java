@@ -1,6 +1,6 @@
 package christmas.domain.menu;
 
-import java.awt.Menu;
+import java.util.Arrays;
 
 public enum MenuOption {
 
@@ -16,7 +16,7 @@ public enum MenuOption {
     ZERO_COKE("제로콜라", 3000),
     RED_WINE("레드와인", 60000),
     CHAMPAGNE("샴페인", 25000),
-    NONE("없음",0);
+    NONE("없음", 0);
 
     private final String name;
     private final int price;
@@ -34,8 +34,13 @@ public enum MenuOption {
         return price;
     }
 
-    public MenuGroup isGroupOf(){
+    public MenuGroup isGroupOf() {
         return MenuGroup.findMenuGroup(this);
+    }
+
+    public static MenuOption hasMenu(String name) {
+        return Arrays.stream(MenuOption.values()).filter(menuOption -> menuOption.name.equals(name))
+                .findAny().orElse(NONE);
     }
 
 
