@@ -43,7 +43,7 @@
 - [ ] 예외 처리
   - [ ] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOption, count)#getTotalPrice
   - [x] 음료만 주문 불가 - MenuOptionEnum#isGroupOf
-  - [ ] 한번에 메뉴 최대 20개 주문 가능 - Orders#getOrdersCount
+  - [x] 한번에 메뉴 최대 20개 주문 가능 - Orders#getOrdersCount
 - [ ] 예약 안내 문구 출력
   - [ ] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." 출력 - OutputVeiw#printReservationNotice
 - [ ] 예상 방문 날짜 입력

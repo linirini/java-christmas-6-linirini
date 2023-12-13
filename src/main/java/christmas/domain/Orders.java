@@ -3,6 +3,7 @@ package christmas.domain;
 import static christmas.domain.menu.MenuGroup.BEVERAGE;
 import static christmas.domain.menu.MenuGroup.DESSERT;
 import static christmas.domain.menu.MenuGroup.MAIN_DISH;
+import static christmas.util.ExceptionEnum.ORDERS_COUNT_EXCESS;
 import static christmas.util.ExceptionEnum.ORDERS_ONLY_BEVERAGE;
 
 import christmas.domain.menu.MenuOption;
@@ -11,6 +12,7 @@ import java.util.Map.Entry;
 
 public class Orders {
 
+    private static final int MAXIMUM_ORDERS_COUNT = 20;
     private final HashMap<MenuOption, Integer> orders;
 
     public Orders(HashMap<MenuOption, Integer> orders) {
@@ -19,7 +21,22 @@ public class Orders {
     }
 
     private void validate(HashMap<MenuOption, Integer> orders) {
+        throwIfOrdersMoreThanMaximum(orders);
         throwIfOrdersOnlyBeverage(orders);
+    }
+
+    private void throwIfOrdersMoreThanMaximum(HashMap<MenuOption, Integer> orders) {
+        if(getOrdersCount(orders)>MAXIMUM_ORDERS_COUNT){
+            throw  new IllegalArgumentException(ORDERS_COUNT_EXCESS.getMessage());
+        }
+    }
+
+    private int getOrdersCount(HashMap<MenuOption, Integer> orders) {
+        int count = 0;
+        for (MenuOption menuOption : orders.keySet()) {
+            count += orders.get(menuOption);
+        }
+        return count;
     }
 
     private void throwIfOrdersOnlyBeverage(HashMap<MenuOption, Integer> orders) {
@@ -38,14 +55,6 @@ public class Orders {
             totalPrice += menuOption.getPrice() * menuOptionCount;
         }
         return totalPrice;
-    }
-
-    public int getOrdersCount() {
-        int count = 0;
-        for (MenuOption menuOption : orders.keySet()) {
-            count += orders.get(menuOption);
-        }
-        return count;
     }
 
     public int getMainMenusCount() {
