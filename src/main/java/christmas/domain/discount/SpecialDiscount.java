@@ -1,8 +1,6 @@
 package christmas.domain.discount;
 
-import static christmas.util.DecemberCalender.DECEMBER;
-
-import christmas.util.DecemberCalender;
+import static christmas.util.Calender.DECEMBER;
 
 public class SpecialDiscount {
 

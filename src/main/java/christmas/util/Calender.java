@@ -2,7 +2,7 @@ package christmas.util;
 
 import java.util.List;
 
-public enum DecemberCalender {
+public enum Calender {
 
     DECEMBER(31, 1, 2, List.of(3, 10, 17, 24, 25, 31), 31);
 
@@ -13,7 +13,7 @@ public enum DecemberCalender {
     private final int firstFriday;
     private final int firstSaturday;
 
-    DecemberCalender(int endDate, int firstFriday, int firstSaturday, List<Integer> star, int eventEndDate) {
+    Calender(int endDate, int firstFriday, int firstSaturday, List<Integer> star, int eventEndDate) {
         this.endDate = endDate;
         this.firstFriday =firstFriday;
         this.firstSaturday = firstSaturday;
