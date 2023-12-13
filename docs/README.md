@@ -76,8 +76,8 @@
   - [x] "<혜택 내역>" 출력 - OutputView#printBenefits
   - [x] "할인명: -0,000원" 형태로 출력 - OutputView#printBenefits
   - [x] 적용 이벤트 내역만 출력 
-  - [ ] 해당 X : "없음" 출력
-  - [ ] 해택 내역 출력 순서는 자율
+  - [x] 해당 X : "없음" 출력
+  - [x] 해택 내역 출력 순서는 자율
 - [ ] 총혜택 금액 출력
   - [x] 총혜택 금액 = 할인 금액 + 증정 메뉴 금액 - Benefit#getTotalBenefitsPrice
   - [ ] "<총혜택 금액>" 출력 - OutputView#printTotalBenefitsPrice

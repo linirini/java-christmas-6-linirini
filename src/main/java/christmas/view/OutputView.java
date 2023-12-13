@@ -10,6 +10,7 @@ import static christmas.view.OutputEnum.GIFT_TITLE;
 import static christmas.view.OutputEnum.MONEY_UNIT;
 import static christmas.view.OutputEnum.ORDERS_TITLE;
 import static christmas.view.OutputEnum.SPECIAL_DISCOUNT;
+import static christmas.view.OutputEnum.TOTAL_BENEFITS_PRICE_TITLE;
 import static christmas.view.OutputEnum.TOTAL_ORDERS_PRICE_TITLE;
 import static christmas.view.OutputEnum.WEEKEND_DISCOUNT;
 import static christmas.view.OutputEnum.WEEK_DISCOUNT;
@@ -37,7 +38,7 @@ public class OutputView {
 
     public void printTotalOrdersPrice(int amount) {
         System.out.println(TOTAL_ORDERS_PRICE_TITLE.getMessage());
-        System.out.println(formatMoney(amount) + MONEY_UNIT);
+        System.out.println(formatPrice(amount) + MONEY_UNIT);
     }
 
     public void printGiftMenu(Gift gift) {
@@ -83,12 +84,13 @@ public class OutputView {
 
     private void printIfBenefitExists(int amount, OutputEnum benefitOption) {
         if (amount != 0) {
-            System.out.println(benefitOption.getMessage() + amount + MONEY_UNIT.getMessage());
+            System.out.println(benefitOption.getMessage() + formatBenefit(amount) + MONEY_UNIT.getMessage());
         }
     }
 
     public void printTotalBenefitsPrice(int amount) {
-
+        System.out.println(TOTAL_BENEFITS_PRICE_TITLE);
+        System.out.println(formatBenefit(amount)+MONEY_UNIT);
     }
 
     public void printActualPaymentPrice(int amount) {
@@ -99,8 +101,13 @@ public class OutputView {
 
     }
 
-    private String formatMoney(int amount) {
+    private String formatPrice(int amount) {
         DecimalFormat df = new DecimalFormat("###,###");
+        return df.format(amount);
+    }
+
+    private String formatBenefit(int amount) {
+        DecimalFormat df = new DecimalFormat("-###,###");
         return df.format(amount);
     }
 
