@@ -17,11 +17,11 @@
 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
 ```
 - [x] 달력 - Calender#DECEMBER
-- [ ] 중복 할인 및 증정 적용 - EventPlanner
+- [x] 중복 할인 및 증정 적용 - Benefit
 - [ ] 크리스마스 디데이 할인 - ChristmasDdayDiscount#discount
   - [x] 2023.12.1 ~ 2023.12.25 - Calender#isDdayEventTerm
   - [x] 초기 값 1000원, 매일 100원씩 증가 - ChristmasDdayDiscount#discount
-  - [ ] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액 - EventPlanner
+  - [x] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액 - EventPlanner
 - [ ] 평일/주말 할인 - WeekAndWeekendDiscount#discount
   - [x] 주말인지, 평일인지 판단한다. - Calender#isWeekend
   - [x] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
@@ -31,7 +31,7 @@
 - [ ] 특별 할인 - SpecialDiscount#discount
   - [x] 3, 10, 17, 24, 25, 31일 - Calender#isStarDate
   - [x] 1000원 할인 - SpecialDiscount#discount
-  - [ ] 총주문 금액 - 1000원
+  - [x] 총주문 금액 - 1000원
 - [ ] 증정 이벤트 - GiftEvent
   - [x] 총주문 금액 >= 12만원 , 샴페인 1개(25000원) 증정 - GiftEvent#receiveGift
 - [x] 크리스마스 디데이 할인 외 12.1~12.31 적용 - Calender#isEventTerm
@@ -41,11 +41,11 @@
     - [x] 1만원 이상 : 트리
     - [x] 2만원 이상 : 산타
 - [ ] 예외 처리
-  - [ ] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOption, count)#getTotalPrice
+  - [ ] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOption, count)#getTotalPrice, EventPlanner
   - [x] 음료만 주문 불가 - MenuOptionEnum#isGroupOf
   - [x] 한번에 메뉴 최대 20개 주문 가능 - Orders#getOrdersCount
-- [ ] 예약 안내 문구 출력
-  - [ ] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." 출력 - OutputVeiw#printEventIntroduction
+- [x] 예약 안내 문구 출력
+  - [x] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." 출력 - OutputVeiw#printEventIntroduction
 - [ ] 예상 방문 날짜 입력
   - [x] "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)" 출력  - InputView#inputReservationDate
   - [ ] "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 예외 출력 - ExceptionEnum
@@ -53,9 +53,9 @@
     - [ ] 숫자가 아닌 경우 
 - [ ] 주문 메뉴와 개수 입력
     - [x] "주문하실 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)" 출력 - InputView#inputOrders
-      - [ ] "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요." 예외 처리
+      - [x] "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요." 예외 처리
         - [x] 없는 메뉴를 입력하는 경우 - Orders#validate
-        - [ ] 메뉴 개수를 1 미만을 입력하는 경우 - Orders#validate
+        - [x] 메뉴 개수를 1 미만을 입력하는 경우 - Orders#validate
         - [ ] 메뉴 개수가 숫자가 아닌 경우
         - [ ] 주어진 형식과 다른 경우
         - [ ] 중복 메뉴를 입력하는 경우(e.g. 시저샐러드-1,시저샐러드-1) 
@@ -97,3 +97,4 @@
   - [x] 이벤트 종료 날짜
   - [x] 주말 날짜
   - [x] enum으로 두는 의미가 있는가
+- [ ] 주말/평일 할인 분리
