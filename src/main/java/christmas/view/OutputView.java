@@ -3,11 +3,16 @@ package christmas.view;
 import static christmas.domain.Gift.NONE;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_PREFIX;
 import static christmas.view.OutputEnum.BENEFITS_NOTICE_SUFFIX;
+import static christmas.view.OutputEnum.CHRISTMAS_D_DAY_DISCOUNT;
 import static christmas.view.OutputEnum.COUNT_UNIT;
+import static christmas.view.OutputEnum.GIFT_EVENT;
 import static christmas.view.OutputEnum.GIFT_TITLE;
 import static christmas.view.OutputEnum.MONEY_UNIT;
 import static christmas.view.OutputEnum.ORDERS_TITLE;
+import static christmas.view.OutputEnum.SPECIAL_DISCOUNT;
 import static christmas.view.OutputEnum.TOTAL_ORDERS_PRICE_TITLE;
+import static christmas.view.OutputEnum.WEEKEND_DISCOUNT;
+import static christmas.view.OutputEnum.WEEK_DISCOUNT;
 
 import christmas.domain.Badge;
 import christmas.domain.Benefit;
@@ -45,7 +50,37 @@ public class OutputView {
     }
 
     public void printBenefits(Benefit benefit) {
+        printChristmasDdayDiscountBenefit(benefit.getChristmasDdayDiscountBenefit());
+        printWeekDiscountBenefit(benefit.getWeekDiscountBenefit());
+        printWeekendDiscountBenefit(benefit.getWeekendDiscountBenefit());
+        printSpecialDiscountBenefit(benefit.getSpecialDiscountBenefit());
+        printGiftEventBenefit(benefit.getGiftEventBenefit());
+    }
 
+    private void printChristmasDdayDiscountBenefit(int amount) {
+        printIfBenefitExists(amount, CHRISTMAS_D_DAY_DISCOUNT);
+    }
+
+    private void printWeekDiscountBenefit(int amount) {
+        printIfBenefitExists(amount, WEEK_DISCOUNT);
+    }
+
+    private void printWeekendDiscountBenefit(int amount) {
+        printIfBenefitExists(amount, WEEKEND_DISCOUNT);
+    }
+
+    private void printSpecialDiscountBenefit(int amount) {
+        printIfBenefitExists(amount, SPECIAL_DISCOUNT);
+    }
+
+    private void printGiftEventBenefit(int amount) {
+        printIfBenefitExists(amount, GIFT_EVENT);
+    }
+
+    private void printIfBenefitExists(int amount, OutputEnum benefitOption) {
+        if (amount != 0) {
+            System.out.println(benefitOption.getMessage() + amount + MONEY_UNIT.getMessage());
+        }
     }
 
     public void printTotalBenefitsPrice(int amount) {
