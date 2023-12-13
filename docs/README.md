@@ -21,12 +21,12 @@
 - [ ] 크리스마스 디데이 할인 - ChristmasDdayDiscount#discount
   - [x] 2023.12.1 ~ 2023.12.25 - Calender#isDdayEventTerm
   - [x] 초기 값 1000원, 매일 100원씩 증가 - ChristmasDdayDiscount#discount
-  - [x] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액 - EventPlanner
+  - [x] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액
 - [ ] 평일/주말 할인 - WeekAndWeekendDiscount#discount
   - [x] 주말인지, 평일인지 판단한다. - Calender#isWeekend
-  - [x] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
+  - [x] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#weekDiscount
     - [x] 디저트 메뉴 개수 가져오기 - Orders#getDessertMenusCount
-  - [x] 주말(금~토) : 메인 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
+  - [x] 주말(금~토) : 메인 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#weekendDiscount
     - [x] 메인 메뉴 가져오기 - Orders#getMainMenusCount
 - [ ] 특별 할인 - SpecialDiscount#discount
   - [x] 3, 10, 17, 24, 25, 31일 - Calender#isStarDate
@@ -36,7 +36,7 @@
   - [x] 총주문 금액 >= 12만원 , 샴페인 1개(25000원) 증정 - GiftEvent#receiveGift
 - [x] 크리스마스 디데이 할인 외 12.1~12.31 적용 - Calender#isEventTerm
 - [ ] 이벤트 배지 부여 - BadgeEnum
-  - [ ] 총혜택 금액에 따라 : 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴 가격 - EventPlanner#getTotalBenefitPrice
+  - [ ] 총혜택 금액에 따라 : 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴 가격 - Benefit#getTotalBenefitPrice
     - [x] 5천원 이상 : 별
     - [x] 1만원 이상 : 트리
     - [x] 2만원 이상 : 산타
@@ -85,7 +85,7 @@
 - [ ] 할인 후 예상 결제 금액 출력
   - [x] "<할인 후 예상 결제 금액>" 출력 - OutputView#printActualPaymentPrice
   - [x] "0,000원" 형태로 출력 - OutputView#printActualPaymentPrice
-  - [ ] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액 - EventPlanner#getActualPaymentPrice
+  - [x] 할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액 - EventPlanner#getActualPaymentPrice
   - [x] 할인 금액 계산 - Benefits#getDiscountPrice
 - [ ] 이벤트 배지 출력
   - [x] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
@@ -97,4 +97,4 @@
   - [x] 이벤트 종료 날짜
   - [x] 주말 날짜
   - [x] enum으로 두는 의미가 있는가
-- [ ] 주말/평일 할인 분리
+- [x] 주말/평일 할인 분리

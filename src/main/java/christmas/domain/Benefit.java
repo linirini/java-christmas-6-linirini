@@ -8,6 +8,14 @@ public class Benefit {
     private final int specialDiscountBenefit;
     private final int giftEventBenefit;
 
+    public Benefit(){
+        this.christmasDdayDiscountBenefit = 0;
+        this.weekDiscountBenefit = 0;
+        this.weekendDiscountBenefit = 0;
+        this.specialDiscountBenefit = 0;
+        this.giftEventBenefit = 0;
+    }
+
     public Benefit(int christmasDdayDiscountBenefit, int weekDiscountBenefit,
             int weekendDiscountBenefit, int specialDiscountBenefit, int giftEventBenefit) {
         this.christmasDdayDiscountBenefit = christmasDdayDiscountBenefit;
