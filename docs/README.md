@@ -84,3 +84,6 @@
   - [ ] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
   - [ ] 해당 X : "없음" 출력 - OutputView#printEventBadge
   - [ ] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력 - BadgeEnum#getBadgeByBenefitAmount
+
+# ✔️리팩터링
+- [ ] 달력의 상수 정리 (12월에 대한 상수들임)
