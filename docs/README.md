@@ -37,9 +37,9 @@
 - [x] 크리스마스 디데이 할인 외 12.1~12.31 적용 - Calender#isEventTerm
 - [ ] 이벤트 배지 부여 - BadgeEnum
   - [ ] 총혜택 금액에 따라 : 총혜택 금액 = 할인 금액의 합계 + 증정 메뉴 가격 - EventPlanner#getTotalBenefitPrice
-    - [ ] 5천원 이상 : 별
-    - [ ] 1만원 이상 : 트리
-    - [ ] 2만원 이상 : 산타
+    - [x] 5천원 이상 : 별
+    - [x] 1만원 이상 : 트리
+    - [x] 2만원 이상 : 산타
 - [ ] 예외 처리
   - [ ] 총주문 금액 10000원 이상부터 이벤트 적용 - Orders(MenuOption, count)#getTotalPrice
   - [ ] 음료만 주문 불가 - MenuOptionEnum#isGroupOf
@@ -88,7 +88,7 @@
 - [ ] 이벤트 배지 출력
   - [ ] "<12월 이벤트 배지>" 출력 - OutputView#printEventBadge
   - [ ] 해당 X : "없음" 출력 - OutputView#printEventBadge
-  - [ ] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력 - BadgeEnum#getBadgeByBenefitAmount
+  - [x] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력 - BadgeEnum#getBadgeByBenefitAmount
 
 # ✔️리팩터링
 - [x] 달력의 상수 정리 (12월에 대한 상수들임)

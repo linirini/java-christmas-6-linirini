@@ -24,7 +24,11 @@ public class Orders {
     }
 
     public int getOrdersCount() {
-        return -1;
+        int count = 0;
+        for (MenuOption menuOption : orders.keySet()) {
+            count += orders.get(menuOption);
+        }
+        return count;
     }
 
     public int getMainMenusCount() {
