@@ -45,7 +45,7 @@
   - [x] 음료만 주문 불가 - MenuOptionEnum#isGroupOf
   - [x] 한번에 메뉴 최대 20개 주문 가능 - Orders#getOrdersCount
 - [ ] 예약 안내 문구 출력
-  - [ ] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." 출력 - OutputVeiw#printReservationNotice
+  - [ ] "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다." 출력 - OutputVeiw#printEventIntroduction
 - [ ] 예상 방문 날짜 입력
   - [x] "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)" 출력  - InputView#inputReservationDate
   - [ ] "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 예외 출력 - ExceptionEnum
@@ -74,7 +74,7 @@
   - [ ] 해당 X : "없음" 출력 - OutputView#printGiftMenu
 - [ ] 혜택 내역 출력
   - [ ] "<혜택 내역>" 출력 - OutputView#printBenefits
-  - [ ] "할인명 : -0,000원" 형태로 출력 - OutputView#printBenefits
+  - [ ] "할인명: -0,000원" 형태로 출력 - OutputView#printBenefits
   - [ ] 적용 이벤트 내역만 출력
   - [ ] 해당 X : "없음" 출력
   - [ ] 해택 내역 출력 순서는 자율
