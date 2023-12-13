@@ -1,6 +1,7 @@
 package christmas.domain.discount;
 
 import static christmas.util.DecemberCalender.CHRISTMAS;
+import static christmas.util.DecemberCalender.DECEMBER;
 
 import christmas.util.DecemberCalender;
 
@@ -11,7 +12,7 @@ public class ChristmasDdayDiscount {
     private static final int NO_DISCOUNT = 0;
 
     public int discount(int date) {
-        if (DecemberCalender.isDdayEventTerm(date)) {
+        if (DECEMBER.isDdayEventTerm(date)) {
             return INITIAL_DISCOUNT + (CHRISTMAS - date) * DISCOUNT_UNIT;
         }
         return NO_DISCOUNT;

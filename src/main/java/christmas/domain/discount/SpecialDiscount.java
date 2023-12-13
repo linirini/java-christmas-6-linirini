@@ -1,5 +1,7 @@
 package christmas.domain.discount;
 
+import static christmas.util.DecemberCalender.DECEMBER;
+
 import christmas.util.DecemberCalender;
 
 public class SpecialDiscount {
@@ -9,7 +11,7 @@ public class SpecialDiscount {
     private static final int NO_DISCOUNT = 0;
 
     public int discount(int date) {
-        if (DecemberCalender.isStarDate(date)) {
+        if (DECEMBER.isStarDate(date)) {
             return DISCOUNT_UNIT;
         }
         return NO_DISCOUNT;

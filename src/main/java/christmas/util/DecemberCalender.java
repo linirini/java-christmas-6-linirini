@@ -4,46 +4,48 @@ import java.util.List;
 
 public enum DecemberCalender {
 
-    DECEMBER(31, List.of(3, 10, 17, 24, 25, 31), 31);
+    DECEMBER(31, 1, 2, List.of(3, 10, 17, 24, 25, 31), 31);
 
     public static final int CHRISTMAS = 25;
-    private static final int FIRST_WEEKEND_FRIDAY = 1;
-    private static final int FIRST_WEEKEND_SATURDAY = 2;
     private final int endDate;
     private final List<Integer> star;
     private final int eventEndDate;
+    private final int firstFriday;
+    private final int firstSaturday;
 
-    DecemberCalender(int endDate, List<Integer> star, int eventEndDate) {
+    DecemberCalender(int endDate, int firstFriday, int firstSaturday, List<Integer> star, int eventEndDate) {
         this.endDate = endDate;
+        this.firstFriday =firstFriday;
+        this.firstSaturday = firstSaturday;
         this.star = star;
         this.eventEndDate = eventEndDate;
     }
 
-    public static boolean isDdayEventTerm(int date) {
+    public boolean isDdayEventTerm(int date) {
         return date <= CHRISTMAS;
     }
 
-    public static boolean isWeekend(int date) {
+    public boolean isWeekend(int date) {
         return isFriday(date) || isSaturday(date);
     }
 
-    private static boolean isFriday(int date) {
-        return (date - FIRST_WEEKEND_FRIDAY) % 7 == 0;
+    private boolean isFriday(int date) {
+        return (date - this.firstFriday) % 7 == 0;
     }
 
-    private static boolean isSaturday(int date) {
-        return (date - FIRST_WEEKEND_SATURDAY) % 7 == 0;
+    private boolean isSaturday(int date) {
+        return (date - this.firstSaturday) % 7 == 0;
     }
 
-    public static boolean isStarDate(int date) {
-        return DECEMBER.star.contains(date);
+    public boolean isStarDate(int date) {
+        return this.star.contains(date);
     }
 
-    public static boolean isEventTerm(int date) {
-        return date <= DECEMBER.eventEndDate;
+    public boolean isEventTerm(int date) {
+        return date <= this.eventEndDate;
     }
 
-    public static boolean isExistingDate(int date) {
-        return date <= DECEMBER.endDate;
+    public boolean isExistingDate(int date) {
+        return date <= this.endDate;
     }
 }
