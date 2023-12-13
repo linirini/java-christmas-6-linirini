@@ -10,6 +10,7 @@ import static christmas.view.OutputEnum.ORDERS_TITLE;
 import static christmas.view.OutputEnum.TOTAL_ORDERS_PRICE_TITLE;
 
 import christmas.domain.Badge;
+import christmas.domain.Benefit;
 import christmas.domain.Gift;
 import christmas.domain.Orders;
 import christmas.domain.menu.MenuOption;
@@ -43,7 +44,7 @@ public class OutputView {
         System.out.println(gift.menu.getName() + ' ' + gift.count + COUNT_UNIT);
     }
 
-    public void printBenefits() {
+    public void printBenefits(Benefit benefit) {
 
     }
 
