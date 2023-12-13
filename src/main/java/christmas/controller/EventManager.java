@@ -24,8 +24,8 @@ public class EventManager {
         outputView.printEventIntroduction();
         int date = inputReservationDateUntilNoError();
         Orders orders = inputOrdersUntilNoError();
-        outputView.printOrders(orders);
         outputView.printBenefitsNotice(date);
+        outputView.printOrders(orders);
         int totalOrdersPrice = getTotalOrdersPriceAndPrint(orders);
         Benefit benefit = eventPlanner.applyEvents(date,orders);
         printGiftMenu(benefit);
@@ -91,9 +91,9 @@ public class EventManager {
         return orders;
     }
 
-    private static List<String> splitByRegex(String menuOptionsWithCount, String regex) {
+    private static List<String> splitByRegex(String target, String regex) {
         try {
-            return Arrays.stream(menuOptionsWithCount.split(regex))
+            return Arrays.stream(target.split(regex))
                     .toList();
         } catch (PatternSyntaxException PSE) {
             throw new IllegalArgumentException(INVALID_ORDER.getMessage());

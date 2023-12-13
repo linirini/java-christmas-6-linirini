@@ -11,7 +11,7 @@ public class ChristmasDdayDiscount {
 
     public int discount(int date) {
         if (DECEMBER.isDdayEventTerm(date)) {
-            return INITIAL_DISCOUNT + (CHRISTMAS - date) * DISCOUNT_UNIT;
+            return INITIAL_DISCOUNT + (date-1) * DISCOUNT_UNIT;
         }
         return NO_DISCOUNT;
     }

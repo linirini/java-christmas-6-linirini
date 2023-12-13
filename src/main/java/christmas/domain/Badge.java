@@ -1,6 +1,7 @@
 package christmas.domain;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 public enum Badge {
@@ -21,11 +22,16 @@ public enum Badge {
 
     public static Badge getBadge(int amount) {
         return Arrays.stream(values()).filter(badge -> amount >= badge.minimumAmount)
-                .collect(Collectors.toList()).stream().max(Badge::getMinimumAmount).orElse(NONE);
+                .collect(Collectors.toList()).stream()
+                .max(Comparator.comparingInt(Badge::getMinimumAmount)).orElse(NONE);
     }
 
-    private int getMinimumAmount(Badge badge) {
+    private static int getMinimumAmount(Badge badge) {
         return badge.minimumAmount;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }

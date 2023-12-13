@@ -24,7 +24,6 @@ public enum MenuGroup {
     BEVERAGE("음료", List.of(ZERO_COKE, RED_WINE, CHAMPAGNE)),
     NONE("없음", List.of());
 
-
     private final String name;
     private final List<MenuOption> menuOptions;
 

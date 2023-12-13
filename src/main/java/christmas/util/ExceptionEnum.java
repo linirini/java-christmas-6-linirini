@@ -4,8 +4,8 @@ public enum ExceptionEnum {
 
     ORDERS_ONLY_BEVERAGE("음료만 주문할 수 없습니다. 다시 입력해 주세요."),
     ORDERS_COUNT_EXCESS("한번에 메뉴 최대 20개 주문 가능합니다. 다시 입력해 주세요."),
-    INVALID_ORDER("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요."),
-    INVALID_DATE("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+    INVALID_ORDER("유효하지 않은 주문입니다. 다시 입력해 주세요."),
+    INVALID_DATE("유효하지 않은 날짜입니다. 다시 입력해 주세요.");
 
     private static final String ERROR = "[ERROR] ";
     private final String message;

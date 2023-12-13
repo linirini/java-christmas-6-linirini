@@ -16,7 +16,7 @@ import java.util.Map.Entry;
 
 public class Orders {
 
-    private static final int MINIMUM_ORDER_COUNT = 20;
+    private static final int MINIMUM_ORDER_COUNT = 1;
     private static final int MAXIMUM_ORDERS_COUNT = 20;
     private final HashMap<MenuOption, Integer> orders;
 
@@ -25,8 +25,12 @@ public class Orders {
         this.orders = createOrders(orders);
     }
 
-    private HashMap<MenuOption, Integer> createOrders(HashMap<String, Integer> orders) {
-        return null;
+    private HashMap<MenuOption, Integer> createOrders(HashMap<String, Integer> ordersToConvert) {
+        HashMap<MenuOption,Integer> orders = new HashMap<>();
+        for (Entry<String, Integer> entry : ordersToConvert.entrySet()) {
+            orders.put(MenuOption.findMenuOption(entry.getKey()),entry.getValue());
+        }
+        return orders;
     }
 
     private void validate(HashMap<String, Integer> orders) {
@@ -38,7 +42,7 @@ public class Orders {
 
     private void throwIfMenuOptionDoesNotExist(HashMap<String, Integer> orders) {
         for (String menuOption : orders.keySet()) {
-            if(MenuOption.hasMenu(menuOption)==NONE){
+            if(MenuOption.findMenuOption(menuOption)==NONE){
                 throw new IllegalArgumentException(INVALID_ORDER.getMessage());
             }
         }
@@ -68,7 +72,7 @@ public class Orders {
 
     private void throwIfOrdersOnlyBeverage(HashMap<String, Integer> orders) {
         for (String menuOption : orders.keySet()) {
-            if(MenuOption.valueOf(menuOption).isGroupOf()!=BEVERAGE) {
+            if(MenuOption.findMenuOption(menuOption).isGroupOf()!=BEVERAGE) {
                 return;
             }
         }
