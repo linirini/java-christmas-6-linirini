@@ -4,12 +4,11 @@ import static christmas.domain.menu.MenuGroup.BEVERAGE;
 import static christmas.domain.menu.MenuGroup.DESSERT;
 import static christmas.domain.menu.MenuGroup.MAIN_DISH;
 import static christmas.domain.menu.MenuOption.NONE;
-import static christmas.util.ExceptionEnum.NO_MENU;
+import static christmas.util.ExceptionEnum.INVALID_ORDER;
 import static christmas.util.ExceptionEnum.ORDERS_COUNT_EXCESS;
 import static christmas.util.ExceptionEnum.ORDERS_ONLY_BEVERAGE;
 
 import christmas.domain.menu.MenuOption;
-import java.awt.MenuShortcut;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +16,7 @@ import java.util.Map.Entry;
 
 public class Orders {
 
+    private static final int MINIMUM_ORDER_COUNT = 20;
     private static final int MAXIMUM_ORDERS_COUNT = 20;
     private final HashMap<MenuOption, Integer> orders;
 
@@ -31,6 +31,7 @@ public class Orders {
 
     private void validate(HashMap<String, Integer> orders) {
         throwIfMenuOptionDoesNotExist(orders);
+        throwIfInvalidMenuOptionCount(orders);
         throwIfOrdersMoreThanMaximum(orders);
         throwIfOrdersOnlyBeverage(orders);
     }
@@ -38,7 +39,15 @@ public class Orders {
     private void throwIfMenuOptionDoesNotExist(HashMap<String, Integer> orders) {
         for (String menuOption : orders.keySet()) {
             if(MenuOption.hasMenu(menuOption)==NONE){
-                throw new IllegalArgumentException(NO_MENU.getMessage());
+                throw new IllegalArgumentException(INVALID_ORDER.getMessage());
+            }
+        }
+    }
+
+    private void throwIfInvalidMenuOptionCount(HashMap<String, Integer> orders) {
+        for (String menuOption : orders.keySet()) {
+            if(orders.get(menuOption)<MINIMUM_ORDER_COUNT){
+                throw new IllegalArgumentException(INVALID_ORDER.getMessage());
             }
         }
     }
