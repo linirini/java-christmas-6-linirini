@@ -1,5 +1,7 @@
 package christmas.domain.menu;
 
+import java.awt.Menu;
+
 public enum MenuOption {
 
     MUSHROOM_SOUP("양송이 스프", 6000),
@@ -22,4 +24,10 @@ public enum MenuOption {
         this.name = name;
         this.price = price;
     }
+
+    public MenuGroup isGroupOf(){
+        return MenuGroup.findMenuGroup(this);
+    }
+
+
 }
