@@ -25,12 +25,12 @@
 - [ ] 평일/주말 할인 - WeekAndWeekendDiscount#discount
   - [x] 주말인지, 평일인지 판단한다. - Calender#isWeekend
   - [x] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
-    - [ ] 디저트 메뉴 개수 가져오기 - Orders#getDessertMenusCount
+    - [x] 디저트 메뉴 개수 가져오기 - Orders#getDessertMenusCount
   - [x] 주말(금~토) : 메인 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
-    - [ ] 메인 메뉴 가져오기 - Orders#getMainMenusCount
+    - [x] 메인 메뉴 가져오기 - Orders#getMainMenusCount
 - [ ] 특별 할인 - SpecialDiscount#discount
   - [x] 3, 10, 17, 24, 25, 31일 - Calender#isStarDate
-  - [ ] 1000원 할인 - SpecialDiscount#discount
+  - [x] 1000원 할인 - SpecialDiscount#discount
   - [ ] 총주문 금액 - 1000원
 - [ ] 증정 이벤트 - GiftEvent
   - [ ] 총주문 금액 >= 12만원 , 샴페인 1개(25000원) 증정 - GiftEvent#receiveGift
@@ -91,7 +91,7 @@
   - [ ] 총혜택 금액에 따라 이벤트 배지 이름 다르게 출력 - BadgeEnum#getBadgeByBenefitAmount
 
 # ✔️리팩터링
-- [ ] 달력의 상수 정리 (12월에 대한 상수들임)
+- [x] 달력의 상수 정리 (12월에 대한 상수들임)
   - [x] 이벤트 종료 날짜
-  - [ ] 주말 날짜
-  - [ ] enum으로 두는 의미가 있는가
+  - [x] 주말 날짜
+  - [x] enum으로 두는 의미가 있는가
