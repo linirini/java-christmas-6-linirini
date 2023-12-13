@@ -1,6 +1,5 @@
 package christmas;
 
-import christmas.controller.EventController;
 import christmas.controller.EventManager;
 
 public class Application {
