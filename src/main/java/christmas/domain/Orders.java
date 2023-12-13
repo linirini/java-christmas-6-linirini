@@ -23,4 +23,12 @@ public class Orders {
         return -1;
     }
 
+    public int getMainMenusCount() {
+        return -1;
+    }
+
+    public int getDessertMenusCount() {
+        return -1;
+    }
+
 }

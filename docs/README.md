@@ -18,12 +18,14 @@
 - [ ] 중복 할인 및 증정 적용 - EventPlanner
 - [ ] 크리스마스 디데이 할인 - ChristmasDdayDiscount#discount
   - [x] 2023.12.1 ~ 2023.12.25 - Calender#isDdayEventTerm
-  - [ ] 초기 값 1000원, 매일 100원씩 증가 - ChristmasDdayDiscount#discount
+  - [x] 초기 값 1000원, 매일 100원씩 증가 - ChristmasDdayDiscount#discount
   - [ ] 크리스마스 디데이 할인 = 총주문 금액 - 해당 금액 - EventPlanner
 - [ ] 평일/주말 할인 - WeekAndWeekendDiscount#discount
   - [x] 주말인지, 평일인지 판단한다. - Calender#isWeekend
   - [ ] 평일(일~목) : 디저트 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
+    - [ ] 디저트 메뉴 개수 가져오기 - Orders#getDessertMenusCount
   - [ ] 주말(금~토) : 메인 메뉴 1개당 2023원 할인 - WeekAndWeekendDiscount#discount
+    - [ ] 메인 메뉴 가져오기 - Orders#getMainMenusCount
 - [ ] 특별 할인 - SpecialDiscount#discount
   - [x] 3, 10, 17, 24, 25, 31일 - Calender#isStarDate
   - [ ] 총주문 금액 - 1000원 - SpecialDiscount#discount
