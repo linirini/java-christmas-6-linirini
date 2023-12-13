@@ -42,6 +42,6 @@ public enum DecemberCalender {
     }
 
     public static boolean isExistingDate(int date) {
-        return false;
+        return date <= DECEMBER.endDate;
     }
 }
