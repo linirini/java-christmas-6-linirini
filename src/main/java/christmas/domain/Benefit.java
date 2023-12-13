@@ -41,9 +41,15 @@ public class Benefit {
         return getTotalDiscountPrice() + giftEventBenefit;
     }
 
-    public int getTotalDiscountPrice(){
+    public int getTotalDiscountPrice() {
         return christmasDdayDiscountBenefit + weekDiscountBenefit + weekendDiscountBenefit
                 + specialDiscountBenefit;
+    }
+
+    public boolean noBenefitExists() {
+        return christmasDdayDiscountBenefit == 0 && weekDiscountBenefit == 0
+                && weekendDiscountBenefit == 0 && specialDiscountBenefit == 0
+                && giftEventBenefit == 0;
     }
 
 }

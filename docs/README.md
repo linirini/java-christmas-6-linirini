@@ -66,16 +66,16 @@
   - [x] "메뉴명 n개" 형식으로 출력 - OutputView#printOrders
   - [x] 주문 메뉴 출력 순서는 자율
 - [ ] 총주문 금액 출력
-  - [ ] "<할인 전 총주문 금액>" 출력 - OutputView#printTotalOrdersPrice
-  - [ ] "0,000원" 형태로 출력 - OutputView#printTotalOrdersPrice
+  - [x] "<할인 전 총주문 금액>" 출력 - OutputView#printTotalOrdersPrice
+  - [x] "0,000원" 형태로 출력 - OutputView#printTotalOrdersPrice
 - [ ] 증정 메뉴 출력
-  - [ ] "<증정 메뉴>" 출력 - OutputView#printGiftMenu
-  - [ ] "메뉴명 n개" 형태로 출력 - OutputView#printGiftMenu
-  - [ ] 해당 X : "없음" 출력 - OutputView#printGiftMenu
+  - [x] "<증정 메뉴>" 출력 - OutputView#printGiftMenu
+  - [x] "메뉴명 n개" 형태로 출력 - OutputView#printGiftMenu
+  - [x] 해당 X : "없음" 출력 - OutputView#printGiftMenu
 - [ ] 혜택 내역 출력
-  - [ ] "<혜택 내역>" 출력 - OutputView#printBenefits
-  - [ ] "할인명: -0,000원" 형태로 출력 - OutputView#printBenefits
-  - [ ] 적용 이벤트 내역만 출력 
+  - [x] "<혜택 내역>" 출력 - OutputView#printBenefits
+  - [x] "할인명: -0,000원" 형태로 출력 - OutputView#printBenefits
+  - [x] 적용 이벤트 내역만 출력 
   - [ ] 해당 X : "없음" 출력
   - [ ] 해택 내역 출력 순서는 자율
 - [ ] 총혜택 금액 출력

@@ -50,6 +50,10 @@ public class OutputView {
     }
 
     public void printBenefits(Benefit benefit) {
+        if(benefit.noBenefitExists()){
+            System.out.println(NONE);
+            return;
+        }
         printChristmasDdayDiscountBenefit(benefit.getChristmasDdayDiscountBenefit());
         printWeekDiscountBenefit(benefit.getWeekDiscountBenefit());
         printWeekendDiscountBenefit(benefit.getWeekendDiscountBenefit());
