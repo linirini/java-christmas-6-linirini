@@ -25,6 +25,14 @@ public enum MenuOption {
         this.price = price;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
     public MenuGroup isGroupOf(){
         return MenuGroup.findMenuGroup(this);
     }

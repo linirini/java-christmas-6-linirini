@@ -20,7 +20,12 @@ public class Orders {
     }
 
     public int getTotalPrice() {
-        return -1;
+        int totalPrice = 0;
+        for (MenuOption menuOption : orders.keySet()) {
+            int menuOptionCount = orders.get(menuOption);
+            totalPrice += menuOption.getPrice() * menuOptionCount;
+        }
+        return totalPrice;
     }
 
     public int getOrdersCount() {
