@@ -29,10 +29,17 @@ class OrdersTest {
                 IllegalArgumentException.class);
     }
 
+    @DisplayName("음료만 주문하면 예외를 던진다.")
+    @Test
+    void 음료만_예외() {
+        assertThatThrownBy(() -> new Orders(createOrders("샴페인", 18))).isInstanceOf(
+                IllegalArgumentException.class);
+    }
+
     private HashMap<String, Integer> createOrders(String name, int count) {
         HashMap<String, Integer> orders = new HashMap<>();
-        orders.put("해산물파스타", 3);
-        orders.put("바비큐립", 4);
+        orders.put("제로콜라", 3);
+        orders.put("샴페인", 4);
         orders.put(name, count);
         return orders;
     }
