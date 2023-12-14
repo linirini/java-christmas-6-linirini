@@ -11,15 +11,22 @@ class OrdersTest {
     @DisplayName("없는 메뉴를 주문하면 예외를 던진다.")
     @Test
     void 없는_메뉴_예외() {
-        assertThatThrownBy(() -> new Orders(createOrders("없는메뉴"))).isInstanceOf(
+        assertThatThrownBy(() -> new Orders(createOrders("없는메뉴", 1))).isInstanceOf(
                 IllegalArgumentException.class);
     }
 
-    private HashMap<String, Integer> createOrders(String name) {
+    @DisplayName("메뉴를 1개 미만 주문하면 예외를 던진다.")
+    @Test
+    void _1개_미만_주문_예외() {
+        assertThatThrownBy(() -> new Orders(createOrders("초코케익", 0))).isInstanceOf(
+                IllegalArgumentException.class);
+    }
+
+    private HashMap<String, Integer> createOrders(String name, int count) {
         HashMap<String, Integer> orders = new HashMap<>();
         orders.put("해산물파스타", 3);
         orders.put("바비큐립", 4);
-        orders.put(name, 5);
+        orders.put(name, count);
         return orders;
     }
 
