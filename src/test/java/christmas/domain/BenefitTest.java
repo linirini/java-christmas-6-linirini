@@ -13,6 +13,12 @@ class BenefitTest {
         assertThat(createBenefit().getTotalBenefitsPrice()).isEqualTo(31423);
     }
 
+    @DisplayName("증정품 금액을 반환한다.")
+    @Test
+    void 증정품_금액() {
+        assertThat(createBenefit().getGiftEventBenefitPrice()).isEqualTo(25000);
+    }
+
     private Benefit createBenefit() {
         return new Benefit(3400, 2023, 0, 1000, Gift.GIFT);
     }
