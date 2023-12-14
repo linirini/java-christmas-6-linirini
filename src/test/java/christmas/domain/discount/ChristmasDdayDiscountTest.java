@@ -23,4 +23,12 @@ class ChristmasDdayDiscountTest {
         assertThat(christmasDdayDiscount.discount(date)).isEqualTo(expected);
     }
 
+    @DisplayName("크리스마스 디데이 할인 이벤트 기간이 아니면 할인이 적용되지 않는다.")
+    @ParameterizedTest
+    @CsvSource({"31,0", "26,0", "27,0"})
+    void 크리스마스_디데이_할인_미적용(int date, int expected) {
+        assertThat(christmasDdayDiscount.discount(date)).isEqualTo(expected);
+    }
+
+
 }
