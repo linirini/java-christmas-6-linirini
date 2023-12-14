@@ -26,6 +26,14 @@ class WeekAndWeekendDiscountTest {
         assertThat(weekAndWeekendDiscount.weekendDiscount(orders, date)).isEqualTo(expected);
     }
 
+    @DisplayName("평일이면 디저트 메뉴에 할인이 적용된다.")
+    @ParameterizedTest
+    @CsvSource({"3,10115", "13,10115", "25,10115"})
+    void 평일_할인(int date, int expected) {
+        Orders orders = new Orders(createOrders());
+        assertThat(weekAndWeekendDiscount.weekDiscount(orders, date)).isEqualTo(expected);
+    }
+
     private HashMap<String, Integer> createOrders() {
         HashMap<String, Integer> orders = new HashMap<>();
         orders.put("해산물파스타", 3);
