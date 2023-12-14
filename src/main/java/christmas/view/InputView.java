@@ -8,13 +8,11 @@ public class InputView {
 
     public String inputReservationDate(){
         System.out.println(RESERVATION_DATE_INPUT.getMessage());
-        String input = readLine();
-        return input;
+        return readLine();
     }
 
     public String inputOrders(){
         System.out.println(ORDERS_INPUT.getMessage());
-        String input = readLine();
-        return input;
+        return readLine();
     }
 }
