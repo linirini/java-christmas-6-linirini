@@ -16,4 +16,12 @@ class MenuOptionTest {
                 MenuGroup.valueOf(expected));
     }
 
+    @DisplayName("메뉴 이름으로 메뉴를 찾는다.")
+    @ParameterizedTest
+    @CsvSource({"시저샐러드,CAESAR_SALAD", "티본스테이크,T_BONE_STEAK", "레드와인,RED_WINE", "없는메뉴,NONE"})
+    void 메뉴_찾기(String viewName, String expected) {
+        assertThat(MenuOption.findMenuOption(viewName)).isEqualTo(
+                MenuOption.valueOf(expected));
+    }
+
 }
