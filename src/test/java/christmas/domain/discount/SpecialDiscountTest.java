@@ -23,4 +23,11 @@ class SpecialDiscountTest {
         assertThat(specialDiscount.discount(date)).isEqualTo(expected);
     }
 
+    @DisplayName("달력이 별이 표시되어 있지 않으면 특별 할인이 적용되지 않는다.")
+    @ParameterizedTest
+    @CsvSource({"26,0", "5,0", "18,0"})
+    void 특별_할인_미적용(int date, int expected) {
+        assertThat(specialDiscount.discount(date)).isEqualTo(expected);
+    }
+
 }
