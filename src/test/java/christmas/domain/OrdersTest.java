@@ -1,5 +1,6 @@
 package christmas.domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.HashMap;
@@ -34,6 +35,18 @@ class OrdersTest {
     void 음료만_예외() {
         assertThatThrownBy(() -> new Orders(createOrders("샴페인", 18))).isInstanceOf(
                 IllegalArgumentException.class);
+    }
+
+    @DisplayName("총 구매 금액을 계산한다.")
+    @Test
+    void 총구입금액() {
+        assertThat(new Orders(createOrders("바비큐립", 2)).getTotalPrice()).isEqualTo(217000);
+    }
+
+    @DisplayName("메인 메뉴 개수를 계산한다.")
+    @Test
+    void 메인_메뉴_개수() {
+        assertThat(new Orders(createOrders("바비큐립", 2)).getMainMenusCount()).isEqualTo(2);
     }
 
     private HashMap<String, Integer> createOrders(String name, int count) {
