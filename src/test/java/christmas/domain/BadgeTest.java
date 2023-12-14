@@ -22,4 +22,11 @@ class BadgeTest {
         assertThat(Badge.getBadge(amount)).isEqualTo(Badge.STAR);
     }
 
+    @DisplayName("혜택 금액이 10000원 이상 20000원 미만이면 트리 뱃지를 부여한다.")
+    @ParameterizedTest
+    @ValueSource(ints = {10000, 15000, 16000, 19000})
+    void 트리_뱃지_부여(int amount) {
+        assertThat(Badge.getBadge(amount)).isEqualTo(Badge.TREE);
+    }
+
 }
