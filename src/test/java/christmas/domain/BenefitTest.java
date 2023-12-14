@@ -33,6 +33,13 @@ class BenefitTest {
         assertThat(createBenefit().getTotalDiscountPrice()).isEqualTo(6423);
     }
 
+    @DisplayName("혜택이 없는지 확인한다.")
+    @Test
+    void 혜택_없음() {
+        assertThat(new Benefit(0, 0, 0, 0, Gift.NONE).noBenefitExists()).isTrue();
+        assertThat(createBenefit().noBenefitExists()).isFalse();
+    }
+
     private Benefit createBenefit() {
         return new Benefit(3400, 2023, 0, 1000, Gift.GIFT);
     }
