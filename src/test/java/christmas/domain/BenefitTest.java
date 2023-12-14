@@ -27,6 +27,12 @@ class BenefitTest {
                 0);
     }
 
+    @DisplayName("총 할인 금액을 반환한다.")
+    @Test
+    void 총할인_금액() {
+        assertThat(createBenefit().getTotalDiscountPrice()).isEqualTo(6423);
+    }
+
     private Benefit createBenefit() {
         return new Benefit(3400, 2023, 0, 1000, Gift.GIFT);
     }
