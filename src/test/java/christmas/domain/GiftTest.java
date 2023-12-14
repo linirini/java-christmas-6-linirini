@@ -15,4 +15,11 @@ class GiftTest {
         assertThat(Gift.receiveGift(amount)).isEqualTo(Gift.GIFT);
     }
 
+    @DisplayName("12만원 미만 구매 시 증정품을 받지 않는다.")
+    @ParameterizedTest
+    @ValueSource(ints = {12000, 20000, 10000})
+    void 증정훔_미수령(int amount) {
+        assertThat(Gift.receiveGift(amount)).isEqualTo(Gift.NONE);
+    }
+
 }
