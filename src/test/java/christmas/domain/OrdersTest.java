@@ -49,6 +49,12 @@ class OrdersTest {
         assertThat(new Orders(createOrders("바비큐립", 2)).getMainMenusCount()).isEqualTo(2);
     }
 
+    @DisplayName("디저트 메뉴 개수를 계산한다.")
+    @Test
+    void 디저트_메뉴_개수() {
+        assertThat(new Orders(createOrders("아이스크림", 5)).getDessertMenusCount()).isEqualTo(5);
+    }
+
     private HashMap<String, Integer> createOrders(String name, int count) {
         HashMap<String, Integer> orders = new HashMap<>();
         orders.put("제로콜라", 3);
